@@ -2,192 +2,214 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Italia Street – Full Round Neon Pulse</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>GasCloud – Italia Street Pulse</title>
 
 <script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
 
 <style>
-:root{
-  --red:#ff1a1a;
-  --white:#ffffff;
-  --green:#00cc66;
-  --bg:#040404;
-}
-
-*{box-sizing:border-box}
+/* =====================
+   BASE (GASCLOUD)
+===================== */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  background:radial-gradient(circle at top,#111,#000);
+  background:#0b0b0b;
   color:#fff;
-  overflow-x:hidden;
 }
 
-/* ===== STREET TEXTURE ===== */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    repeating-linear-gradient(
-      45deg,
-      rgba(255,255,255,.02),
-      rgba(255,255,255,.02) 1px,
-      transparent 1px,
-      transparent 4px
-    );
-  opacity:.25;
-  pointer-events:none;
-  z-index:0;
-}
-
-/* ===== BASE LAYOUT ===== */
 .container{
   padding:28px 16px 130px;
   display:flex;
   flex-direction:column;
-  gap:30px;
+  gap:26px;
   align-items:center;
-  position:relative;
-  z-index:2;
 }
 
-/* ===== FULL ROUND NEON BORDER ===== */
-.neon{
+/* =====================
+   TRICOLOR RUNNING BORDER
+===================== */
+.pulse{
   position:relative;
-  border-radius:1000px;
-  padding:4px;
+  border-radius:26px;
+  padding:3px;
+  overflow:hidden;
 }
 
-.neon::before{
+.pulse::before{
   content:"";
   position:absolute;
-  inset:0;
-  border-radius:1000px;
+  inset:-50%;
   background:conic-gradient(
-    from 0deg,
-    var(--red),
-    var(--white),
-    var(--green),
-    var(--white),
-    var(--red)
+    #ff1a1a,
+    #ffffff,
+    #00cc66,
+    #ffffff,
+    #ff1a1a
   );
-  animation:spin 6s linear infinite;
-  filter:blur(1px);
+  animation:spin 4s linear infinite;
 }
 
-.neon::after{
+.pulse::after{
   content:"";
   position:absolute;
-  inset:2px;
-  border-radius:1000px;
-  background:#0b0b0b;
+  inset:3px;
+  background:#050505;
+  border-radius:22px;
   z-index:1;
 }
 
-.neon > .inner{
+.pulse > *{
   position:relative;
   z-index:2;
-  border-radius:1000px;
-  padding:26px;
-  text-align:center;
 }
 
-/* ===== HEADER ===== */
-.header{
+/* =====================
+   HEADER (BUBBLE)
+===================== */
+.bubble{
   width:100%;
   max-width:420px;
+  text-align:center;
+  font-size:22px;
+  font-weight:900;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  padding:22px;
 }
 
-.header h1{
-  margin:0;
-  font-size:22px;
+.bubble::after{
+  content:"Official bot";
+  display:block;
+  margin-top:8px;
+  font-size:11px;
+  letter-spacing:2px;
+  opacity:.7;
+}
+
+/* =====================
+   PANEL
+===================== */
+.panel{
+  width:100%;
+  max-width:420px;
+  padding:22px;
+  border-radius:26px;
+}
+
+/* =====================
+   GRID
+===================== */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+/* =====================
+   CARDS (ORIGINAL SHAPES)
+===================== */
+.card-catalog{
+  grid-column:1/-1;
+  height:140px;
+  border-radius:26px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  font-size:20px;
   font-weight:900;
   letter-spacing:4px;
 }
 
-/* ===== PANEL ===== */
-.panel{
-  width:100%;
-  max-width:420px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:24px;
-}
-
-/* ===== BUTTONS ===== */
-.btn{
-  height:140px;
-  border-radius:1000px;
-  cursor:pointer;
-}
-
-.btn.big{grid-column:1/-1;height:160px}
-
-.btn .inner{
-  height:100%;
+.card-small{
+  height:135px;
+  border-radius:22px;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   gap:12px;
+  cursor:pointer;
+}
+
+.card-small span,
+.card-catalog span{
+  padding:6px 14px;
+  border-radius:10px;
+  font-size:12px;
   font-weight:900;
-  letter-spacing:2px;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
 }
 
-.icon{
-  width:46px;
-  height:46px;
-  border-radius:50%;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:10px;
-  opacity:.6;
-}
-
-/* ===== POPUP ===== */
+/* =====================
+   POPUP
+===================== */
 .popup-overlay{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.85);
+  background:rgba(0,0,0,.65);
   display:none;
   align-items:center;
   justify-content:center;
-  z-index:10;
 }
 
 .popup-overlay.show{display:flex}
 
 .popup-box{
-  max-width:260px;
+  min-width:240px;
+  padding:22px 26px;
+  border-radius:18px;
+  text-align:center;
 }
 
-/* ===== BOTTOM BAR ===== */
+.popup-title{
+  font-size:15px;
+  font-weight:900;
+  letter-spacing:2px;
+  margin-bottom:12px;
+}
+
+.popup-username{
+  display:block;
+  padding-top:10px;
+  margin-top:10px;
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-decoration:none;
+  color:#fff;
+}
+
+/* =====================
+   BOTTOM BAR
+===================== */
 .bottom-bar{
   position:fixed;
   bottom:14px;
   left:14px;
   right:14px;
-  height:80px;
+  height:68px;
+  border-radius:26px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
 }
 
-/* ===== LINKS ===== */
-a{
-  color:#fff;
+.bottom-bar a{
+  font-size:12px;
+  font-weight:800;
   text-decoration:none;
-  font-weight:900;
+  color:#fff;
   cursor:pointer;
 }
 
-/* ===== ANIMATION ===== */
+/* =====================
+   ANIMATION
+===================== */
 @keyframes spin{
   from{transform:rotate(0deg)}
   to{transform:rotate(360deg)}
@@ -199,78 +221,74 @@ a{
 
 <div class="container">
 
-  <div class="neon header">
-    <div class="inner">
-      <h1>ITALIA STREET</h1>
-    </div>
+  <div class="pulse">
+    <div class="bubble">Gas Cloud</div>
   </div>
 
-  <div class="panel">
-    <div class="grid">
+  <div class="pulse">
+    <div class="panel">
+      <div class="grid">
 
-      <div class="neon btn big" onclick="location.href='catalog.html'">
-        <div class="inner">
-          <div class="icon">LOGO</div>
-          CATALOGO
+        <div class="pulse card-catalog" onclick="location.href='catalog.html'">
+          <span>CATALOGO</span>
         </div>
-      </div>
 
-      <div class="neon btn"
-        onclick="openPopup('CONTACT','Telegram','https://t.me/INSERT','Signal','https://signal.me/#INSERT')">
-        <div class="inner">
-          <div class="icon">LOGO</div>
-          CONTACTS
+        <div class="pulse card-small"
+          onclick="openPopup(
+            'CONTACT',
+            'Telegram',
+            'https://t.me/INSERT',
+            'Signal',
+            'https://signal.me/#INSERT'
+          )">
+          <span>CONTACTS</span>
         </div>
-      </div>
 
-      <div class="neon btn"
-        onclick="openPopup('CHANNEL','Telegram','https://t.me/INSERT')">
-        <div class="inner">
-          <div class="icon">LOGO</div>
-          CHANNELS
+        <div class="pulse card-small"
+          onclick="openPopup(
+            'CHANNEL',
+            'Telegram',
+            'https://t.me/INSERT'
+          )">
+          <span>CHANNELS</span>
         </div>
-      </div>
 
-      <div class="neon btn"
-        onclick="openPopup('CREATED BY','AUTHOR','https://t.me/INSERT')">
-        <div class="inner">
-          <div class="icon">LOGO</div>
-          CREATED BY
+        <div class="pulse card-small"
+          onclick="openPopup(
+            'CREATED BY',
+            'AUTHOR',
+            'https://t.me/INSERT'
+          )">
+          <span>CREATED BY</span>
         </div>
-      </div>
 
-      <div class="neon btn">
-        <div class="inner">
-          <div class="icon">LOGO</div>
-          NEWS
+        <div class="pulse card-small">
+          <span>NEWS</span>
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
 </div>
 
 <div id="popup" class="popup-overlay" onclick="closePopup()">
-  <div class="neon popup-box" onclick="event.stopPropagation()">
-    <div class="inner">
-      <div id="popup-title"></div>
-      <a id="popup-link-telegram"></a>
-      <a id="popup-link-signal"></a>
-    </div>
+  <div class="pulse popup-box" onclick="event.stopPropagation()">
+    <div class="popup-title" id="popup-title"></div>
+    <a class="popup-username" id="popup-link-telegram"></a>
+    <a class="popup-username" id="popup-link-signal"></a>
   </div>
 </div>
 
-<div class="neon bottom-bar">
-  <div class="inner">
-    <a onclick="tg.openLink('https://t.me/INSERT')">Telegram</a>
-    <a onclick="tg.openLink('https://instagram.com/INSERT')">Instagram</a>
-    <a onclick="tg.openLink('https://signal.me/#INSERT')">Signal</a>
-  </div>
+<div class="pulse bottom-bar">
+  <a onclick="tg.openLink('https://t.me/INSERT')">Telegram</a>
+  <a onclick="tg.openLink('https://instagram.com/INSERT')">Instagram</a>
+  <a onclick="tg.openLink('https://signal.me/#INSERT')">Signal</a>
 </div>
 
 <script>
 const tg = window.Telegram.WebApp;
-tg.ready(); tg.expand();
+tg.ready();
+tg.expand();
 
 const popup=document.getElementById("popup");
 const popupTitle=document.getElementById("popup-title");
@@ -282,15 +300,19 @@ function openPopup(title,tgText,tgUrl,signalText,signalUrl){
   popupTelegram.innerText=tgText;
   popupTelegram.onclick=()=>tg.openLink(tgUrl);
   popupTelegram.style.display="block";
+
   if(signalText&&signalUrl){
     popupSignal.innerText=signalText;
     popupSignal.onclick=()=>tg.openLink(signalUrl);
     popupSignal.style.display="block";
   }else popupSignal.style.display="none";
+
   popup.classList.add("show");
 }
 
-function closePopup(){ popup.classList.remove("show"); }
+function closePopup(){
+  popup.classList.remove("show");
+}
 </script>
 
 </body>
