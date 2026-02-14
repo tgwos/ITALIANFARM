@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Italia Street – Full Round Neon</title>
+<title>Italia Street – Full Round Neon Pulse</title>
 
 <script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
 
@@ -13,8 +13,7 @@
   --red:#ff1a1a;
   --white:#ffffff;
   --green:#00cc66;
-  --bg:#050505;
-  --card:#0c0c0c;
+  --bg:#040404;
 }
 
 *{box-sizing:border-box}
@@ -27,7 +26,7 @@ body{
   overflow-x:hidden;
 }
 
-/* STREET TEXTURE */
+/* ===== STREET TEXTURE ===== */
 body::before{
   content:"";
   position:fixed;
@@ -40,56 +39,67 @@ body::before{
       transparent 1px,
       transparent 4px
     );
-  opacity:.28;
+  opacity:.25;
   pointer-events:none;
   z-index:0;
 }
 
-body::after{
+/* ===== BASE LAYOUT ===== */
+.container{
+  padding:28px 16px 130px;
+  display:flex;
+  flex-direction:column;
+  gap:30px;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+/* ===== FULL ROUND NEON BORDER ===== */
+.neon{
+  position:relative;
+  border-radius:1000px;
+  padding:4px;
+}
+
+.neon::before{
   content:"";
-  position:fixed;
-  inset:-100%;
-  background:
-    repeating-radial-gradient(
-      circle,
-      rgba(255,255,255,.04) 0,
-      rgba(255,255,255,.04) 1px,
-      transparent 1px,
-      transparent 2px
-    );
-  animation:noise .5s steps(2) infinite;
-  opacity:.12;
-  pointer-events:none;
+  position:absolute;
+  inset:0;
+  border-radius:1000px;
+  background:conic-gradient(
+    from 0deg,
+    var(--red),
+    var(--white),
+    var(--green),
+    var(--white),
+    var(--red)
+  );
+  animation:spin 6s linear infinite;
+  filter:blur(1px);
+}
+
+.neon::after{
+  content:"";
+  position:absolute;
+  inset:2px;
+  border-radius:1000px;
+  background:#0b0b0b;
   z-index:1;
 }
 
-@keyframes noise{
-  0%{transform:translate(0,0)}
-  50%{transform:translate(-2%,2%)}
-  100%{transform:translate(0,0)}
-}
-
-/* LAYOUT */
-.container{
-  padding:28px 16px 120px;
-  display:flex;
-  flex-direction:column;
-  gap:28px;
-  align-items:center;
+.neon > .inner{
   position:relative;
-  z-index:5;
+  z-index:2;
+  border-radius:1000px;
+  padding:26px;
+  text-align:center;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .header{
   width:100%;
   max-width:420px;
-  text-align:center;
-  padding:28px;
-  background:#0b0b0b;
-  border-radius:999px;
-  border:3px solid;
-  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
 }
 
 .header h1{
@@ -99,25 +109,38 @@ body::after{
   letter-spacing:4px;
 }
 
-/* PANEL */
+/* ===== PANEL ===== */
 .panel{
   width:100%;
   max-width:420px;
-  padding:24px;
-  background:var(--card);
-  border-radius:36px;
-  border:3px solid;
-  border-image:linear-gradient(135deg,var(--red),var(--white),var(--green)) 1;
 }
 
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:22px;
+  gap:24px;
 }
 
-/* ICON PLACEHOLDER */
+/* ===== BUTTONS ===== */
+.btn{
+  height:140px;
+  border-radius:1000px;
+  cursor:pointer;
+}
+
+.btn.big{grid-column:1/-1;height:160px}
+
+.btn .inner{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
 .icon{
   width:46px;
   height:46px;
@@ -130,43 +153,7 @@ body::after{
   opacity:.6;
 }
 
-/* CATALOG BUTTON */
-.card-catalog{
-  grid-column:1/-1;
-  height:150px;
-  border-radius:999px;
-  background:#0a0a0a;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:20px;
-  cursor:pointer;
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:4px;
-  border:3px solid;
-  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
-}
-
-/* SMALL BUTTONS */
-.card-small{
-  height:140px;
-  border-radius:999px;
-  background:#0a0a0a;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  cursor:pointer;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:2px;
-  border:3px solid;
-  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
-}
-
-/* POPUP */
+/* ===== POPUP ===== */
 .popup-overlay{
   position:fixed;
   inset:0;
@@ -180,44 +167,30 @@ body::after{
 .popup-overlay.show{display:flex}
 
 .popup-box{
-  background:#0b0b0b;
-  padding:28px;
-  border-radius:36px;
-  text-align:center;
-  border:3px solid;
-  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
+  max-width:260px;
 }
 
-.popup-username{
-  display:block;
-  margin-top:14px;
-  cursor:pointer;
-}
-
-/* BOTTOM BAR */
+/* ===== BOTTOM BAR ===== */
 .bottom-bar{
   position:fixed;
   bottom:14px;
   left:14px;
   right:14px;
-  height:76px;
-  border-radius:999px;
-  background:#0b0b0b;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  border:3px solid;
-  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
-  z-index:5;
+  height:80px;
 }
 
-.bottom-bar a{
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1px;
-  cursor:pointer;
-  text-decoration:none;
+/* ===== LINKS ===== */
+a{
   color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  cursor:pointer;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
 }
 </style>
 </head>
@@ -226,39 +199,51 @@ body::after{
 
 <div class="container">
 
-  <div class="header">
-    <h1>ITALIA STREET</h1>
+  <div class="neon header">
+    <div class="inner">
+      <h1>ITALIA STREET</h1>
+    </div>
   </div>
 
   <div class="panel">
     <div class="grid">
 
-      <div class="card-catalog" onclick="location.href='catalog.html'">
-        <div class="icon">LOGO</div>
-        CATALOGO
+      <div class="neon btn big" onclick="location.href='catalog.html'">
+        <div class="inner">
+          <div class="icon">LOGO</div>
+          CATALOGO
+        </div>
       </div>
 
-      <div class="card-small"
+      <div class="neon btn"
         onclick="openPopup('CONTACT','Telegram','https://t.me/INSERT','Signal','https://signal.me/#INSERT')">
-        <div class="icon">LOGO</div>
-        CONTACTS
+        <div class="inner">
+          <div class="icon">LOGO</div>
+          CONTACTS
+        </div>
       </div>
 
-      <div class="card-small"
+      <div class="neon btn"
         onclick="openPopup('CHANNEL','Telegram','https://t.me/INSERT')">
-        <div class="icon">LOGO</div>
-        CHANNELS
+        <div class="inner">
+          <div class="icon">LOGO</div>
+          CHANNELS
+        </div>
       </div>
 
-      <div class="card-small"
+      <div class="neon btn"
         onclick="openPopup('CREATED BY','AUTHOR','https://t.me/INSERT')">
-        <div class="icon">LOGO</div>
-        CREATED BY
+        <div class="inner">
+          <div class="icon">LOGO</div>
+          CREATED BY
+        </div>
       </div>
 
-      <div class="card-small">
-        <div class="icon">LOGO</div>
-        NEWS
+      <div class="neon btn">
+        <div class="inner">
+          <div class="icon">LOGO</div>
+          NEWS
+        </div>
       </div>
 
     </div>
@@ -266,17 +251,21 @@ body::after{
 </div>
 
 <div id="popup" class="popup-overlay" onclick="closePopup()">
-  <div class="popup-box" onclick="event.stopPropagation()">
-    <div id="popup-title"></div>
-    <a id="popup-link-telegram" class="popup-username"></a>
-    <a id="popup-link-signal" class="popup-username"></a>
+  <div class="neon popup-box" onclick="event.stopPropagation()">
+    <div class="inner">
+      <div id="popup-title"></div>
+      <a id="popup-link-telegram"></a>
+      <a id="popup-link-signal"></a>
+    </div>
   </div>
 </div>
 
-<div class="bottom-bar">
-  <a onclick="tg.openLink('https://t.me/INSERT')">Telegram</a>
-  <a onclick="tg.openLink('https://instagram.com/INSERT')">Instagram</a>
-  <a onclick="tg.openLink('https://signal.me/#INSERT')">Signal</a>
+<div class="neon bottom-bar">
+  <div class="inner">
+    <a onclick="tg.openLink('https://t.me/INSERT')">Telegram</a>
+    <a onclick="tg.openLink('https://instagram.com/INSERT')">Instagram</a>
+    <a onclick="tg.openLink('https://signal.me/#INSERT')">Signal</a>
+  </div>
 </div>
 
 <script>
