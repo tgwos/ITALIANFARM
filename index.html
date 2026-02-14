@@ -4,20 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Italia Street – Night Neon</title>
+<title>Italia Street – Night Neon v2</title>
 
 <script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
 
 <style>
-/* =====================
-   ITALIA STREET – NIGHT / NEON
-===================== */
-
 :root{
-  --red:#ff0033;
+  --red:#ff1a1a;
   --white:#ffffff;
-  --green:#00ff88;
-  --neon:#00ffd5;
+  --green:#00cc66;
   --bg:#050505;
   --card:#0c0c0c;
 }
@@ -32,27 +27,24 @@ body{
   overflow-x:hidden;
 }
 
-/* ===== STREET TEXTURE ===== */
+/* STREET TEXTURE */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,.03), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(0,0,0,.35), transparent 45%),
     repeating-linear-gradient(
       45deg,
       rgba(255,255,255,.02),
       rgba(255,255,255,.02) 1px,
       transparent 1px,
-      transparent 3px
+      transparent 4px
     );
-  opacity:.35;
+  opacity:.3;
   pointer-events:none;
   z-index:0;
 }
 
-/* ===== NOISE ===== */
 body::after{
   content:"";
   position:fixed;
@@ -65,21 +57,19 @@ body::after{
       transparent 1px,
       transparent 2px
     );
-  animation:noise 0.45s steps(2) infinite;
-  opacity:.14;
+  animation:noise .5s steps(2) infinite;
+  opacity:.12;
   pointer-events:none;
   z-index:1;
 }
 
 @keyframes noise{
   0%{transform:translate(0,0)}
-  25%{transform:translate(-2%,2%)}
-  50%{transform:translate(2%,-2%)}
-  75%{transform:translate(-1%,1%)}
+  50%{transform:translate(-2%,2%)}
   100%{transform:translate(0,0)}
 }
 
-/* ===== LAYOUT ===== */
+/* LAYOUT */
 .container{
   padding:28px 16px 120px;
   display:flex;
@@ -90,22 +80,16 @@ body::after{
   z-index:5;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .header{
   width:100%;
   max-width:420px;
   text-align:center;
-  padding:24px;
-  border-radius:22px;
-  background:linear-gradient(180deg,#0f0f0f,#050505);
-  border:2px solid transparent;
-  border-image:linear-gradient(
-    120deg,
-    var(--red),
-    var(--neon),
-    var(--green)
-  ) 1;
-  box-shadow:0 0 25px rgba(0,255,213,.25);
+  padding:26px;
+  border-radius:28px;
+  background:#0b0b0b;
+  border:2px solid;
+  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
 }
 
 .header h1{
@@ -115,79 +99,74 @@ body::after{
   letter-spacing:4px;
 }
 
-.header small{
-  display:block;
-  margin-top:10px;
-  font-size:11px;
-  letter-spacing:2px;
-  opacity:.8;
-}
-
-/* ===== PANEL ===== */
+/* PANEL */
 .panel{
   width:100%;
   max-width:420px;
   padding:22px;
-  border-radius:26px;
+  border-radius:30px;
   background:var(--card);
-  border:2px solid transparent;
-  border-image:linear-gradient(
-    135deg,
-    var(--red),
-    var(--neon),
-    var(--green)
-  ) 1;
-  box-shadow:0 0 30px rgba(0,255,213,.2);
+  border:2px solid;
+  border-image:linear-gradient(135deg,var(--red),var(--white),var(--green)) 1;
 }
 
-/* ===== GRID ===== */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px;
+  gap:20px;
 }
 
-/* ===== CATALOG ===== */
-.card-catalog{
-  grid-column:1/-1;
-  height:135px;
-  border-radius:24px;
-  background:linear-gradient(180deg,#121212,#070707);
+/* LOGO PLACEHOLDER */
+.icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#000;
   display:flex;
   align-items:center;
   justify-content:center;
-  cursor:pointer;
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:4px;
-  border:2px solid transparent;
-  border-image:linear-gradient(
-    to right,
-    var(--red),
-    var(--neon),
-    var(--green)
-  ) 1;
-  box-shadow:0 0 20px rgba(0,255,213,.35);
+  font-size:10px;
+  opacity:.6;
 }
 
-/* ===== CARD SMALL ===== */
-.card-small{
-  height:120px;
-  border-radius:22px;
+/* CATALOG BUTTON */
+.card-catalog{
+  grid-column:1/-1;
+  height:140px;
+  border-radius:999px;
   background:#0a0a0a;
   display:flex;
   align-items:center;
   justify-content:center;
+  gap:18px;
+  cursor:pointer;
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:4px;
+  border:2px solid;
+  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
+}
+
+/* SMALL BUTTONS */
+.card-small{
+  height:130px;
+  border-radius:999px;
+  background:#0a0a0a;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
   cursor:pointer;
   font-size:12px;
   font-weight:900;
   letter-spacing:2px;
-  border-left:3px solid var(--red);
-  border-right:3px solid var(--green);
-  box-shadow:0 0 12px rgba(0,255,213,.2);
+  border:2px solid;
+  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
 }
 
-/* ===== POPUP ===== */
+/* POPUP */
 .popup-overlay{
   position:fixed;
   inset:0;
@@ -198,60 +177,37 @@ body::after{
   z-index:10;
 }
 
-.popup-overlay.show{
-  display:flex;
-}
+.popup-overlay.show{display:flex}
 
 .popup-box{
-  background:#070707;
-  padding:24px 28px;
-  border-radius:18px;
-  min-width:240px;
+  background:#0b0b0b;
+  padding:26px;
+  border-radius:26px;
   text-align:center;
-  border:2px solid transparent;
-  border-image:linear-gradient(
-    to right,
-    var(--red),
-    var(--neon),
-    var(--green)
-  ) 1;
-  box-shadow:0 0 30px rgba(0,255,213,.4);
-}
-
-.popup-title{
-  font-weight:900;
-  letter-spacing:2px;
-  margin-bottom:14px;
+  border:2px solid;
+  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
 }
 
 .popup-username{
   display:block;
   margin-top:12px;
-  font-weight:800;
   cursor:pointer;
-  color:#fff;
 }
 
-/* ===== BOTTOM BAR ===== */
+/* BOTTOM BAR */
 .bottom-bar{
   position:fixed;
   bottom:14px;
   left:14px;
   right:14px;
-  height:68px;
-  border-radius:28px;
-  background:#080808;
+  height:72px;
+  border-radius:999px;
+  background:#0b0b0b;
   display:flex;
   justify-content:space-around;
   align-items:center;
-  border:2px solid transparent;
-  border-image:linear-gradient(
-    to right,
-    var(--red),
-    var(--neon),
-    var(--green)
-  ) 1;
-  box-shadow:0 0 25px rgba(0,255,213,.35);
+  border:2px solid;
+  border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
   z-index:5;
 }
 
@@ -272,46 +228,36 @@ body::after{
 
   <div class="header">
     <h1>ITALIA STREET</h1>
-    <small>NIGHT NEON EDITION</small>
   </div>
 
   <div class="panel">
     <div class="grid">
 
       <div class="card-catalog" onclick="location.href='catalog.html'">
+        <div class="icon">LOGO</div>
         CATALOGO
       </div>
 
       <div class="card-small"
-        onclick="openPopup(
-          'CONTACT',
-          'Telegram',
-          'https://t.me/INSERT',
-          'Signal',
-          'https://signal.me/#INSERT'
-        )">
+        onclick="openPopup('CONTACT','Telegram','https://t.me/INSERT','Signal','https://signal.me/#INSERT')">
+        <div class="icon">LOGO</div>
         CONTACTS
       </div>
 
       <div class="card-small"
-        onclick="openPopup(
-          'CHANNEL',
-          'Telegram',
-          'https://t.me/INSERT'
-        )">
+        onclick="openPopup('CHANNEL','Telegram','https://t.me/INSERT')">
+        <div class="icon">LOGO</div>
         CHANNELS
       </div>
 
       <div class="card-small"
-        onclick="openPopup(
-          'CREATED BY',
-          'AUTHOR',
-          'https://t.me/INSERT'
-        )">
+        onclick="openPopup('CREATED BY','AUTHOR','https://t.me/INSERT')">
+        <div class="icon">LOGO</div>
         CREATED BY
       </div>
 
       <div class="card-small">
+        <div class="icon">LOGO</div>
         NEWS
       </div>
 
@@ -319,16 +265,14 @@ body::after{
   </div>
 </div>
 
-<!-- POPUP -->
 <div id="popup" class="popup-overlay" onclick="closePopup()">
   <div class="popup-box" onclick="event.stopPropagation()">
-    <div class="popup-title" id="popup-title"></div>
-    <a class="popup-username" id="popup-link-telegram"></a>
-    <a class="popup-username" id="popup-link-signal"></a>
+    <div id="popup-title"></div>
+    <a id="popup-link-telegram" class="popup-username"></a>
+    <a id="popup-link-signal" class="popup-username"></a>
   </div>
 </div>
 
-<!-- BOTTOM BAR -->
 <div class="bottom-bar">
   <a onclick="tg.openLink('https://t.me/INSERT')">Telegram</a>
   <a onclick="tg.openLink('https://instagram.com/INSERT')">Instagram</a>
@@ -337,8 +281,7 @@ body::after{
 
 <script>
 const tg = window.Telegram.WebApp;
-tg.ready();
-tg.expand();
+tg.ready(); tg.expand();
 
 const popup=document.getElementById("popup");
 const popupTitle=document.getElementById("popup-title");
@@ -350,20 +293,15 @@ function openPopup(title,tgText,tgUrl,signalText,signalUrl){
   popupTelegram.innerText=tgText;
   popupTelegram.onclick=()=>tg.openLink(tgUrl);
   popupTelegram.style.display="block";
-
-  if(signalText && signalUrl){
+  if(signalText&&signalUrl){
     popupSignal.innerText=signalText;
     popupSignal.onclick=()=>tg.openLink(signalUrl);
     popupSignal.style.display="block";
-  }else{
-    popupSignal.style.display="none";
-  }
+  }else popupSignal.style.display="none";
   popup.classList.add("show");
 }
 
-function closePopup(){
-  popup.classList.remove("show");
-}
+function closePopup(){ popup.classList.remove("show"); }
 </script>
 
 </body>
