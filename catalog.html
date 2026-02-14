@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalog</title>
+<script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:sans-serif}
+.back{position:fixed;top:12px;left:12px;cursor:pointer}
+.container{padding:80px 20px 40px;display:flex;flex-direction:column;gap:20px;align-items:center}
+.header{text-align:center}
+.panel{width:100%;max-width:420px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stock-card{padding:24px;text-align:center;cursor:pointer}
+</style>
+</head>
+<body>
 
+<div class="back" onclick="goBack()">BACK</div>
+
+<div class="container">
+  <div class="header">
+    <h1>CATALOG</h1>
+    <small>Select a category</small>
+  </div>
+
+  <div class="panel">
+    <div class="grid">
+      <div class="stock-card" onclick="openStock('stock-1.html')">STOCK 1</div>
+      <div class="stock-card" onclick="openStock('stock-2.html')">STOCK 2</div>
+      <div class="stock-card" onclick="openStock('stock-3.html')">STOCK 3</div>
+      <div class="stock-card" onclick="openStock('stock-4.html')">STOCK 4</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const tg = window.Telegram.WebApp;
+tg.ready(); tg.expand();
+tg.BackButton.show();
+tg.BackButton.onClick(goBack);
+function goBack(){ tg.BackButton.hide(); location.href="index.html"; }
+function openStock(p){ tg.BackButton.hide(); location.assign(p); }
+</script>
+</body>
+</html>
