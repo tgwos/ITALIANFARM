@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>ITALIAN FARM</title>
+<title>Italia Street – Full Round Neon</title>
 
 <script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
 
@@ -40,7 +40,7 @@ body::before{
       transparent 1px,
       transparent 4px
     );
-  opacity:.3;
+  opacity:.28;
   pointer-events:none;
   z-index:0;
 }
@@ -74,7 +74,7 @@ body::after{
   padding:28px 16px 120px;
   display:flex;
   flex-direction:column;
-  gap:26px;
+  gap:28px;
   align-items:center;
   position:relative;
   z-index:5;
@@ -85,10 +85,10 @@ body::after{
   width:100%;
   max-width:420px;
   text-align:center;
-  padding:26px;
-  border-radius:28px;
+  padding:28px;
   background:#0b0b0b;
-  border:2px solid;
+  border-radius:999px;
+  border:3px solid;
   border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
 }
 
@@ -103,10 +103,10 @@ body::after{
 .panel{
   width:100%;
   max-width:420px;
-  padding:22px;
-  border-radius:30px;
+  padding:24px;
   background:var(--card);
-  border:2px solid;
+  border-radius:36px;
+  border:3px solid;
   border-image:linear-gradient(135deg,var(--red),var(--white),var(--green)) 1;
 }
 
@@ -114,13 +114,13 @@ body::after{
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:22px;
 }
 
-/* LOGO PLACEHOLDER */
+/* ICON PLACEHOLDER */
 .icon{
-  width:42px;
-  height:42px;
+  width:46px;
+  height:46px;
   border-radius:50%;
   background:#000;
   display:flex;
@@ -133,36 +133,36 @@ body::after{
 /* CATALOG BUTTON */
 .card-catalog{
   grid-column:1/-1;
-  height:140px;
+  height:150px;
   border-radius:999px;
   background:#0a0a0a;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:18px;
+  gap:20px;
   cursor:pointer;
   font-size:20px;
   font-weight:900;
   letter-spacing:4px;
-  border:2px solid;
+  border:3px solid;
   border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
 }
 
 /* SMALL BUTTONS */
 .card-small{
-  height:130px;
+  height:140px;
   border-radius:999px;
   background:#0a0a0a;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:10px;
+  gap:12px;
   cursor:pointer;
   font-size:12px;
   font-weight:900;
   letter-spacing:2px;
-  border:2px solid;
+  border:3px solid;
   border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
 }
 
@@ -181,16 +181,16 @@ body::after{
 
 .popup-box{
   background:#0b0b0b;
-  padding:26px;
-  border-radius:26px;
+  padding:28px;
+  border-radius:36px;
   text-align:center;
-  border:2px solid;
+  border:3px solid;
   border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
 }
 
 .popup-username{
   display:block;
-  margin-top:12px;
+  margin-top:14px;
   cursor:pointer;
 }
 
@@ -200,13 +200,13 @@ body::after{
   bottom:14px;
   left:14px;
   right:14px;
-  height:72px;
+  height:76px;
   border-radius:999px;
   background:#0b0b0b;
   display:flex;
   justify-content:space-around;
   align-items:center;
-  border:2px solid;
+  border:3px solid;
   border-image:linear-gradient(to right,var(--red),var(--white),var(--green)) 1;
   z-index:5;
 }
