@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock</title>
+<script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:sans-serif}
+.back{position:fixed;top:12px;left:12px;cursor:pointer}
+.app{padding:80px 20px 40px;display:flex;flex-direction:column;gap:20px;align-items:center}
+.panel{width:100%;max-width:420px}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.product{padding:12px;text-align:center;cursor:pointer}
+.modal{position:fixed;inset:0;display:none;flex-direction:column}
+.modal-info{padding:16px}
+.price-row{display:flex;justify-content:space-between;margin-bottom:6px}
+.order,.close{margin-top:12px;cursor:pointer;text-align:center}
+</style>
+</head>
+<body>
 
+<div class="back" onclick="goBack()">BACK</div>
+
+<div class="app">
+  <div class="panel">
+    <div class="products" id="products"></div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div id="modalMedia"></div>
+  <div class="modal-info">
+    <div id="priceList"></div>
+    <div class="order" onclick="order()">ORDER</div>
+    <div class="close" onclick="closeModal()">CLOSE</div>
+  </div>
+</div>
+
+<script>
+const tg = window.Telegram.WebApp;
+tg.ready(); tg.expand();
+const CATEGORY="stock1";
+const CONTACT_USERNAME="INSERT_USERNAME";
+let selectedProduct=null;
+
+fetch("products.json")
+.then(r=>r.json())
+.then(products=>{
+  const box=document.getElementById("products");
+  products.filter(p=>p.category===CATEGORY).forEach(p=>{
+    const d=document.createElement("div");
+    d.className="product";
+    d.innerText=p.name;
+    d.onclick=()=>openModal(p);
+    box.appendChild(d);
+  });
+});
+
+function openModal(p){
+  selectedProduct=p;
+  document.getElementById("priceList").innerHTML="";
+  (p.prices||[]).forEach(i=>{
+    const r=document.createElement("div");
+    r.className="price-row";
+    r.innerHTML="<span>"+i.quantity+"</span><span>"+i.price+"</span>";
+    priceList.appendChild(r);
+  });
+  modal.style.display="flex";
+}
+function closeModal(){ modal.style.display="none"; }
+function order(){
+  if(!selectedProduct)return;
+  const msg=encodeURIComponent("Selected: "+selectedProduct.name);
+  window.open("https://t.me/"+CONTACT_USERNAME+"?text="+msg,"_blank");
+}
+function goBack(){ location.href="catalog.html"; }
+</script>
+</body>
+</html>
