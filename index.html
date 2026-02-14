@@ -1,207 +1,94 @@
+<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Gas Cloud</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>App</title>
 
 <script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
 
 <style>
-:root { --red:#ff1a1a; }
+/* CSS MINIMO – SOLO STRUTTURA */
 
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+*{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  color:#fff;
-  background:#0b0b0b;
+  font-family:sans-serif;
 }
 
 .container{
-  padding:28px 16px 130px;
+  padding:16px;
   display:flex;
   flex-direction:column;
-  gap:26px;
-  align-items:center;
+  gap:16px;
 }
 
-.bubble{
-  width:100%;
-  max-width:420px;
-  background:linear-gradient(180deg,#240000,#050505);
-  border:1px solid var(--red);
-  border-radius:22px;
-  padding:22px;
+.header{
   text-align:center;
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:4px;
-  text-transform:uppercase;
-}
-
-.bubble::after{
-  content:"Official bot";
-  display:block;
-  margin-top:8px;
-  font-size:11px;
-  letter-spacing:2px;
-  opacity:.7;
 }
 
 .panel{
   width:100%;
-  max-width:420px;
-  background:#050505;
-  border-radius:26px;
-  padding:22px;
-  border:1px solid rgba(255,0,0,.35);
 }
 
 .grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px;
+  gap:12px;
 }
 
 .card-catalog{
   grid-column:1/-1;
-  height:140px;
-  border-radius:26px;
-  background:#050505;
-  border:2px solid var(--red);
-  display:flex;
-  align-items:center;
-  gap:22px;
-  padding:0 26px;
-  cursor:pointer;
-}
-
-.card-catalog img{
-  width:88px;
-  height:88px;
-  border-radius:50%;
-}
-
-.card-catalog span{
-  flex:1;
+  padding:24px;
   text-align:center;
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:4px;
+  cursor:pointer;
 }
 
 .card-small{
-  height:135px;
-  border-radius:22px;
-  background:#050505;
-  border:1px solid rgba(255,0,0,.5);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  cursor:pointer;
-}
-
-.card-small.center{
-  grid-column:1/-1;
-  justify-self:center;
-  width:calc(50% - 9px); /* stessa larghezza degli altri */
-}
-
-.card-small img{
-  width:64px;
-  height:64px;
-  border-radius:50%;
-}
-
-.card-small span{
-  padding:6px 14px;
-  border-radius:10px;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.4px;
-  border:1px solid var(--red);
-  background:#0a0a0a;
-}
-
-.popup-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  opacity:0;
-  pointer-events:none;
-}
-
-.popup-overlay.show{
-  opacity:1;
-  pointer-events:auto;
-}
-
-.popup-box{
-  min-width:240px;
-  padding:22px 26px;
-  border:2px solid var(--red);
-  background:#050505;
-  border-radius:14px;
+  padding:20px;
   text-align:center;
-}
-
-.popup-title{
-  font-size:15px;
-  font-weight:900;
-  letter-spacing:2px;
-  margin-bottom:12px;
-}
-
-.popup-username{
-  display:block;
-  padding-top:10px;
-  margin-top:10px;
-  font-size:14px;
-  font-weight:800;
-  letter-spacing:1px;
-  color:var(--red);
-  text-decoration:none;
-}
-
-.popup-username + .popup-username{
-  border-top:1px solid rgba(255,0,0,.25);
+  cursor:pointer;
 }
 
 .bottom-bar{
   position:fixed;
-  bottom:14px;
-  left:14px;
-  right:14px;
-  height:68px;
-  background:#050505;
-  border-radius:26px;
-  border:1px solid rgba(255,0,0,.4);
+  bottom:0;
+  left:0;
+  right:0;
   display:flex;
   justify-content:space-around;
-  align-items:center;
+  padding:12px;
 }
 
 .bottom-bar a{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:var(--red);
-  font-size:12px;
-  font-weight:800;
+  cursor:pointer;
   text-decoration:none;
 }
 
-.bottom-bar svg{
-  width:22px;
-  height:22px;
-  fill:var(--red);
-  stroke-width:2;
+/* popup base */
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+}
+
+.popup-overlay.show{
+  display:flex;
+}
+
+.popup-box{
+  padding:20px;
+  text-align:center;
+}
+
+.popup-username{
+  display:block;
+  margin-top:10px;
+  cursor:pointer;
 }
 </style>
 </head>
@@ -209,87 +96,77 @@ body{
 <body>
 
 <div class="container">
-  <div class="bubble">Gas Cloud</div>
 
+  <!-- HEADER -->
+  <div class="header">
+    <h1>TITLE</h1>
+    <small>subtitle</small>
+  </div>
+
+  <!-- PANEL -->
   <div class="panel">
     <div class="grid">
 
-      <!-- CATALOGO -->
+      <!-- CATALOG -->
       <div class="card-catalog" onclick="location.href='catalog.html'">
-        <img src="https://tgwos.github.io/mini-app1/gas-cloud-logo.png">
-        <span>CATALOGO</span>
+        CATALOG
       </div>
 
-     <!-- CONTACTS -->
-<div class="card-small"
-     onclick="openPopup(
-       'CONTACT',
-       '📨 Telegram: @GasCloud2',
-       'https://t.me/GasCloud2',
-       '📞 Signal',
-       'https://signal.me/#eu/CgfgU9UgZDG_PkIW19RZU90SY6WyRcInKywqHGpPorTDNai1pUFDc67sIUINOKeJ'
-     )">
-  <img src="https://tgwos.github.io/mini-app1/gas-cloud-logo.png">
-  <span>CONTACTS</span>
-</div>
+      <!-- CONTACTS -->
+      <div class="card-small"
+        onclick="openPopup(
+          'CONTACT',
+          'Telegram',
+          'https://t.me/INSERT',
+          'Signal',
+          'https://signal.me/#INSERT'
+        )">
+        CONTACTS
+      </div>
 
-<!-- CHANNELS -->
-<div class="card-small"
-     onclick="openPopup(
-       'CHANNEL',
-       '📢 Telegram: GASCLOUDPRIVE',
-       'https://t.me/+iMgIPdF4HPswMDRh',
-       '📞 Signal',
-       'https://signal.group/#CjQKIDujiZdq6QYIPqOVMwE8I2utpG27IFlHr3NcGuX9rg7nEhB5oZDrOOzWhaoX4bTSIZ4W'
-     )">
-  <img src="https://tgwos.github.io/mini-app1/gas-cloud-logo.png">
-  <span>CHANNELS</span>
-</div>
+      <!-- CHANNELS -->
+      <div class="card-small"
+        onclick="openPopup(
+          'CHANNEL',
+          'Telegram',
+          'https://t.me/INSERT'
+        )">
+        CHANNELS
+      </div>
 
-<!-- CREATED BY -->
-<div class="card-small"
-     onclick="openPopup(
-       'CREATED BY',
-       '👨‍💻 BOX CREATE',
-       'https://t.me/boxcreate22'
-     )">
-  <img src="https://tgwos.github.io/mini-app1/gas-cloud-logo.png">
-  <span>CREATED BY</span>
-</div>
+      <!-- CREATED BY -->
+      <div class="card-small"
+        onclick="openPopup(
+          'CREATED BY',
+          'AUTHOR',
+          'https://t.me/INSERT'
+        )">
+        CREATED BY
+      </div>
 
-<!-- NEW -->
-<div class="card-small">
-  <img src="https://tgwos.github.io/mini-app1/gas-cloud-logo.png">
-  <span>NEWS</span>
+      <!-- NEWS -->
+      <div class="card-small">
+        NEWS
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- POPUP -->
 <div id="popup" class="popup-overlay" onclick="closePopup()">
   <div class="popup-box" onclick="event.stopPropagation()">
-    <div class="popup-title" id="popup-title"></div>
-    <a class="popup-username" id="popup-link-telegram" href="#"></a>
-    <a class="popup-username" id="popup-link-signal" href="#" style="display:none;"></a>
+    <div id="popup-title"></div>
+    <a id="popup-link-telegram" class="popup-username"></a>
+    <a id="popup-link-signal" class="popup-username"></a>
   </div>
 </div>
 
 <!-- BOTTOM BAR -->
 <div class="bottom-bar">
-  <a onclick="tg.openLink('https://t.me/GasCloud2')">
-    <svg viewBox="0 0 24 24"><path d="M22.5 3.5L2.8 10.9c-.9.3-.9 1.6.1 1.9l4.9 1.6 1.9 5.9c.3.9 1.5 1 2 .2l2.8-4.1 5.6 4.1c.8.6 2 .1 2.2-.9l3.4-15.3c.2-.9-.7-1.6-1.7-1.4z"/></svg>
-    Telegram
-  </a>
-
-  <a onclick="tg.openLink('https://instagram.com/INSERT_LINK')">
-    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
-    Instagram
-  </a>
-
- <a onclick="tg.openLink('https://signal.me/#eu/CgfgU9UgZDG_PkIW19RZU90SY6WyRcInKywqHGpPorTDNai1pUFDc67sIUINOKeJ')">
-  <svg viewBox="0 0 24 24">
-    <path d="M12 2a10 10 0 1 0 0 20"/>
-  </svg>
-  Signal
-</a>
+  <a onclick="tg.openLink('https://t.me/INSERT')">Telegram</a>
+  <a onclick="tg.openLink('https://instagram.com/INSERT')">Instagram</a>
+  <a onclick="tg.openLink('https://signal.me/#INSERT')">Signal</a>
 </div>
 
 <script>
@@ -307,7 +184,6 @@ function openPopup(title, tgText, tgUrl, signalText, signalUrl){
 
   popupTelegram.innerText = tgText;
   popupTelegram.onclick = () => tg.openLink(tgUrl);
-  popupTelegram.style.display = "block";
 
   if(signalText && signalUrl){
     popupSignal.innerText = signalText;
