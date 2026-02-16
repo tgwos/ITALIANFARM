@@ -98,13 +98,17 @@ body{
   text-align:center;
 }
 
-/* ===== PANEL ===== */
+/* ===== PANEL (CORNICE GENERALE) ===== */
 .panel{
   width:100%;
   max-width:420px;
   background:rgba(0,0,0,.92);
-  border-radius:26px;
-  padding:22px;
+  border-radius:30px;
+  padding:26px;
+  box-shadow:
+    0 0 0 2px var(--green),
+    0 0 0 4px var(--white),
+    0 0 0 6px var(--red);
 }
 
 /* ===== GRID ===== */
@@ -196,7 +200,7 @@ body{
 .popup-box{
   min-width:240px;
   padding:22px 26px;
-  border-radius:16px;
+  border-radius:18px;
   background:#050505;
   box-shadow:
     0 0 0 2px var(--green),
@@ -268,6 +272,7 @@ body{
     <span>CATALOGO ITALIAN FARM</span>
   </div>
 
+  <!-- CORNICE GENERALE BOTTONI -->
   <div class="panel">
     <div class="grid">
 
@@ -354,22 +359,19 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-/* LOADER 4s */
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.getElementById("loader").style.display = "none";
-  }, 4000);
+window.addEventListener("load",()=>{
+  setTimeout(()=>{
+    document.getElementById("loader").style.display="none";
+  },4000);
 });
 
-/* HEADER VIDEO */
 const logoVideo = document.getElementById("logoVideo");
 const logoStatic = document.getElementById("logoStatic");
-logoVideo.addEventListener("ended", () => {
-  logoVideo.style.display = "none";
-  logoStatic.style.display = "block";
+logoVideo.addEventListener("ended",()=>{
+  logoVideo.style.display="none";
+  logoStatic.style.display="block";
 });
 
-/* POPUP FUNCTIONS */
 const popup = document.getElementById("popup");
 const popupTitle = document.getElementById("popup-title");
 const popupTelegram = document.getElementById("popup-link-telegram");
@@ -379,12 +381,12 @@ function openPopup(title, tgText, tgUrl, signalText, signalUrl){
   popupTitle.innerText = title;
 
   popupTelegram.innerText = tgText;
-  popupTelegram.onclick = () => tg.openLink(tgUrl);
+  popupTelegram.onclick = ()=>tg.openLink(tgUrl);
   popupTelegram.style.display = "block";
 
   if(signalText && signalUrl){
     popupSignal.innerText = signalText;
-    popupSignal.onclick = () => tg.openLink(signalUrl);
+    popupSignal.onclick = ()=>tg.openLink(signalUrl);
     popupSignal.style.display = "block";
   } else {
     popupSignal.style.display = "none";
