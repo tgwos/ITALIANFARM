@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="it">
 <head>
 <meta charset="UTF-8">
@@ -7,123 +8,225 @@
 <script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
 
 <style>
-:root{--green:#008C45;--white:#ffffff;--red:#CD212A}
+:root{
+  --green:#008C45;
+  --white:#ffffff;
+  --red:#CD212A;
+}
+
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
   color:var(--white);
   background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.9)),
+    linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.9)),
     url('https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg')
     center/cover no-repeat fixed;
 }
 
-/* LOADER */
+/* ===== LOADER CON VIDEO ===== */
 #loader{
-  position:fixed;inset:0;
-  background:linear-gradient(135deg,var(--green),var(--white),var(--red));
-  display:flex;align-items:center;justify-content:center;
+  position:fixed;
+  inset:0;
   z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
-#loader img{width:140px;height:140px;object-fit:cover}
 
-/* LAYOUT ORIGINALE */
+#loader video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+#loader::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+}
+
+#loader-text{
+  position:relative;
+  z-index:2;
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  background:linear-gradient(90deg,var(--green),var(--white),var(--red));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* ===== LAYOUT ===== */
 .container{
   padding:28px 16px 130px;
-  display:flex;flex-direction:column;gap:26px;align-items:center
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+  align-items:center;
 }
 
-/* HEADER (SOLO GRAFICA MODIFICATA) */
+/* ===== HEADER ===== */
 .header{
-  display:flex;flex-direction:column;align-items:center;gap:14px
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
 }
-.header video,.header img{
-  width:150px;height:150px;
+
+.header video,
+.header img{
+  width:150px;
+  height:150px;
   border-radius:14px;
   border:3px solid var(--white);
-  box-shadow:0 0 0 4px var(--green),0 0 0 8px var(--red);
-  object-fit:cover;background:#000
+  box-shadow:
+    0 0 0 4px var(--green),
+    0 0 0 8px var(--red);
+  object-fit:cover;
+  background:#000;
 }
+
 .header span{
-  font-size:16px;font-weight:900;letter-spacing:2px;text-align:center
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-align:center;
 }
 
-/* PANEL */
+/* ===== PANEL ===== */
 .panel{
-  width:100%;max-width:420px;
+  width:100%;
+  max-width:420px;
   background:rgba(0,0,0,.88);
-  border-radius:26px;padding:22px;
-  box-shadow:0 0 0 2px var(--green),
-             0 0 0 4px var(--white),
-             0 0 0 6px var(--red)
+  border-radius:26px;
+  padding:22px;
+  box-shadow:
+    0 0 0 2px var(--green),
+    0 0 0 4px var(--white),
+    0 0 0 6px var(--red);
 }
 
-/* GRID */
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
 
-/* CATALOGO */
+/* ===== CATALOGO ===== */
 .card-catalog{
-  grid-column:1/-1;height:140px;border-radius:26px;
-  background:#000;position:relative;
-  display:flex;align-items:center;gap:22px;
-  padding:0 26px;cursor:pointer;overflow:hidden
+  grid-column:1/-1;
+  height:140px;
+  border-radius:26px;
+  background:#000;
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  padding:0 26px;
+  cursor:pointer;
+  overflow:hidden;
 }
+
 .card-catalog::before{
-  content:"";position:absolute;inset:0;
+  content:"";
+  position:absolute;
+  inset:0;
   background:linear-gradient(90deg,var(--green),var(--white),var(--red));
-  animation:borderFlow 3s linear infinite
+  animation:borderFlow 3s linear infinite;
 }
+
 .card-catalog::after{
-  content:"";position:absolute;inset:3px;
-  background:#000;border-radius:22px
+  content:"";
+  position:absolute;
+  inset:3px;
+  background:#000;
+  border-radius:22px;
 }
+
 @keyframes borderFlow{
   0%{background-position:0%}
   100%{background-position:200%}
 }
+
 .card-catalog img{
-  position:relative;z-index:2;
-  width:88px;height:88px;
-  border-radius:14px;border:3px solid var(--white)
-}
-.card-catalog span{
-  position:relative;z-index:2;
-  flex:1;text-align:center;
-  font-size:20px;font-weight:900;letter-spacing:4px
+  position:relative;
+  z-index:2;
+  width:88px;
+  height:88px;
+  border-radius:14px;
+  border:3px solid var(--white);
 }
 
-/* SMALL CARDS */
+.card-catalog span{
+  position:relative;
+  z-index:2;
+  flex:1;
+  text-align:center;
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+/* ===== SMALL ===== */
 .card-small{
-  height:135px;border-radius:22px;background:#000;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  gap:12px;cursor:pointer;
-  box-shadow:0 0 0 2px var(--green),
-             0 0 0 4px var(--white),
-             0 0 0 6px var(--red)
+  height:135px;
+  border-radius:22px;
+  background:#000;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  cursor:pointer;
+  box-shadow:
+    0 0 0 2px var(--green),
+    0 0 0 4px var(--white),
+    0 0 0 6px var(--red);
 }
+
 .card-small img{
-  width:64px;height:64px;
-  border-radius:14px;border:3px solid var(--white)
+  width:64px;
+  height:64px;
+  border-radius:14px;
+  border:3px solid var(--white);
 }
+
 .card-small span{
-  padding:6px 14px;border-radius:10px;
-  font-size:11px;font-weight:900;
+  padding:6px 14px;
+  border-radius:10px;
+  font-size:11px;
+  font-weight:900;
   letter-spacing:1.4px;
   background:linear-gradient(135deg,var(--green),var(--white),var(--red));
-  color:#000
+  color:#000;
 }
 
-/* BOTTOM BAR */
+/* ===== BOTTOM BAR ===== */
 .bottom-bar{
-  position:fixed;bottom:14px;left:14px;right:14px;
-  height:68px;background:#000;border-radius:26px;
-  display:flex;justify-content:space-around;align-items:center;
-  box-shadow:0 0 0 2px var(--green),
-             0 0 0 4px var(--white),
-             0 0 0 6px var(--red)
+  position:fixed;
+  bottom:14px;
+  left:14px;
+  right:14px;
+  height:68px;
+  background:#000;
+  border-radius:26px;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  box-shadow:
+    0 0 0 2px var(--green),
+    0 0 0 4px var(--white),
+    0 0 0 6px var(--red);
 }
+
 .bottom-bar svg{width:22px;height:22px}
 .bottom-bar a:nth-child(1) svg{fill:var(--red)}
 .bottom-bar a:nth-child(2) svg{stroke:var(--white)}
@@ -133,23 +236,21 @@ body{
 
 <body>
 
+<!-- ===== LOADER ===== -->
 <div id="loader">
-  <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
+  <video autoplay muted playsinline>
+    <source src="https://res.cloudinary.com/dizbl4jib/video/upload/v1771246950/IMG_4055_1_grhlla.mp4" type="video/mp4">
+  </video>
+  <div id="loader-text">ITALIAN FARM</div>
 </div>
 
 <div class="container">
 
   <div class="header">
-    <!-- VIDEO UNA SOLA VOLTA -->
     <video id="logoVideo" autoplay muted playsinline>
       <source src="https://res.cloudinary.com/dizbl4jib/video/upload/v1771246950/IMG_4055_1_grhlla.mp4" type="video/mp4">
     </video>
-
-    <!-- LOGO STATICO -->
-    <img id="logoStatic"
-         src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg"
-         style="display:none">
-
+    <img id="logoStatic" src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg" style="display:none">
     <span>CATALOGO ITALIAN FARM</span>
   </div>
 
@@ -161,38 +262,12 @@ body{
         <span>CATALOGO</span>
       </div>
 
-      <div class="card-small"
-           onclick="openPopup('CONTACT','📨 Telegram: @GasCloud2','https://t.me/GasCloud2','📞 Signal','https://signal.me/#eu/CgfgU9UgZDG_PkIW19RZU90SY6WyRcInKywqHGpPorTDNai1pUFDc67sIUINOKeJ')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>CONTACTS</span>
-      </div>
-
-      <div class="card-small"
-           onclick="openPopup('CHANNEL','📢 Telegram: GASCLOUDPRIVE','https://t.me/+iMgIPdF4HPswMDRh','📞 Signal','https://signal.group/#CjQKIDujiZdq6QYIPqOVMwE8I2utpG27IFlHr3NcGuX9rg7nEhB5oZDrOOzWhaoX4bTSIZ4W')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>CHANNELS</span>
-      </div>
-
-      <div class="card-small"
-           onclick="openPopup('CREATED BY','👨‍💻 BOX CREATE','https://t.me/boxcreate22')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>CREATED BY</span>
-      </div>
-
-      <div class="card-small">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>NEWS</span>
-      </div>
+      <div class="card-small"><img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg"><span>CONTACTS</span></div>
+      <div class="card-small"><img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg"><span>CHANNELS</span></div>
+      <div class="card-small"><img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg"><span>CREATED BY</span></div>
+      <div class="card-small"><img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg"><span>NEWS</span></div>
 
     </div>
-  </div>
-</div>
-
-<div id="popup" class="popup-overlay" onclick="closePopup()">
-  <div class="popup-box" onclick="event.stopPropagation()">
-    <div class="popup-title" id="popup-title"></div>
-    <a class="popup-username" id="popup-link-telegram" href="#"></a>
-    <a class="popup-username" id="popup-link-signal" href="#" style="display:none;"></a>
   </div>
 </div>
 
@@ -213,44 +288,19 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-/* LOADER */
+/* NASCONDI LOADER DOPO CARICAMENTO */
 window.addEventListener("load",()=>{
-  setTimeout(()=>document.getElementById("loader").style.display="none",600);
+  setTimeout(()=>document.getElementById("loader").style.display="none",900);
 });
 
-/* VIDEO → STATICO (IDENTICO AL FILE PRECEDENTE) */
-const video=document.getElementById("logoVideo");
-const img=document.getElementById("logoStatic");
-video.addEventListener("ended",()=>{
-  video.style.display="none";
-  img.style.display="block";
+/* VIDEO LOGO → STATICO */
+const logoVideo=document.getElementById("logoVideo");
+const logoStatic=document.getElementById("logoStatic");
+
+logoVideo.addEventListener("ended",()=>{
+  logoVideo.style.display="none";
+  logoStatic.style.display="block";
 });
-
-/* POPUP – IDENTICO */
-const popup=document.getElementById("popup");
-const popupTitle=document.getElementById("popup-title");
-const popupTelegram=document.getElementById("popup-link-telegram");
-const popupSignal=document.getElementById("popup-link-signal");
-
-function openPopup(title,tgText,tgUrl,signalText,signalUrl){
-  popupTitle.innerText=title;
-  popupTelegram.innerText=tgText;
-  popupTelegram.onclick=()=>tg.openLink(tgUrl);
-  popupTelegram.style.display="block";
-
-  if(signalText && signalUrl){
-    popupSignal.innerText=signalText;
-    popupSignal.onclick=()=>tg.openLink(signalUrl);
-    popupSignal.style.display="block";
-  }else{
-    popupSignal.style.display="none";
-  }
-  popup.classList.add("show");
-}
-
-function closePopup(){
-  popup.classList.remove("show");
-}
 </script>
 
 </body>
