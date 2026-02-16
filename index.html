@@ -9,9 +9,9 @@
 
 <style>
 :root{
-  --green:#008C45;
+  --green:#00ff88;
   --white:#ffffff;
-  --red:#CD212A;
+  --red:#ff2a2a;
 }
 
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -37,14 +37,14 @@ body{
 #loader video{
   width:100%;
   height:100%;
-  object-fit:contain; /* NON TAGLIA SU SMARTPHONE */
+  object-fit:contain;
 }
 
 #loader::after{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75));
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8));
 }
 
 #loader-text{
@@ -58,7 +58,7 @@ body{
   -webkit-text-fill-color:transparent;
 }
 
-/* =============== APP BACKGROUND =============== */
+/* =============== BACKGROUND APP =============== */
 .app-bg{
   position:fixed;
   inset:0;
@@ -90,7 +90,9 @@ body{
   height:150px;
   border-radius:14px;
   border:3px solid var(--white);
-  box-shadow:0 0 0 4px var(--green),0 0 0 8px var(--red);
+  box-shadow:
+    0 0 10px var(--green),
+    0 0 18px var(--red);
   object-fit:cover;
   background:#000;
 }
@@ -105,7 +107,7 @@ body{
 .panel{
   width:100%;
   max-width:420px;
-  background:rgba(0,0,0,.9);
+  background:rgba(0,0,0,.92);
   border-radius:26px;
   padding:22px;
 }
@@ -113,35 +115,38 @@ body{
 /* =============== GRID =============== */
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
-/* =============== CATALOGO =============== */
+/* =============== CATALOGO NEON =============== */
 .card-catalog{
   grid-column:1/-1;
-  height:170px;
-  border-radius:28px;
+  height:180px;
+  border-radius:30px;
   position:relative;
   cursor:pointer;
   overflow:hidden;
   background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.85)),
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
     url("https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg")
     center/contain no-repeat;
-  box-shadow:0 0 0 3px var(--green),0 0 0 6px var(--red);
+  box-shadow:
+    0 0 12px var(--green),
+    0 0 26px var(--green),
+    0 0 40px var(--red);
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
 .card-catalog span{
-  font-size:26px;
+  font-size:28px;
   font-weight:900;
-  letter-spacing:6px;
-  padding:14px 28px;
-  border-radius:18px;
-  background:linear-gradient(135deg,var(--green),var(--white),var(--red));
-  color:#000;
+  letter-spacing:8px;
+  color:#fff;
+  text-shadow:
+    0 0 8px var(--green),
+    0 0 16px var(--red);
 }
 
-/* =============== BOTTONI PICCOLI =============== */
+/* =============== BOTTONI PICCOLI (CON CORNICI) =============== */
 .small-wrapper{
   display:flex;
   flex-direction:column;
@@ -158,6 +163,10 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+  box-shadow:
+    0 0 0 2px var(--green),
+    0 0 0 4px var(--white),
+    0 0 0 6px var(--red);
 }
 
 .card-small img{
@@ -277,14 +286,10 @@ body{
 const tg=window.Telegram.WebApp;
 tg.ready(); tg.expand();
 
-/* LOADER 4 SECONDI */
 window.addEventListener("load",()=>{
-  setTimeout(()=>{
-    document.getElementById("loader").style.display="none";
-  },4000);
+  setTimeout(()=>{document.getElementById("loader").style.display="none";},4000);
 });
 
-/* VIDEO HEADER */
 const logoVideo=document.getElementById("logoVideo");
 const logoStatic=document.getElementById("logoStatic");
 logoVideo.addEventListener("ended",()=>{
