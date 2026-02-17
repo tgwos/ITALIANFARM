@@ -2,11 +2,11 @@
   
 {
   "id": 1,
-  "name": "DRY CRIME",
+  "name": "PREMIUM PATRON",
   "mediaType": "video",
   "mediaUrl": "https://res.cloudinary.com/dizbl4jib/video/upload/v1769172291/DRYCRIME_vxojr7.mp4",
   "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1769172366/drycrime_hptrrf.png",
-  "category": "stock",
+  "category": "stock1",
   "prices": [
     {"quantity": 50, "price": 200},
     {"quantity": 100, "price": 380},
