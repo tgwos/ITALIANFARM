@@ -17,7 +17,7 @@
 
 *{
   box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent
+  -webkit-tap-highlight-color:transparent;
 }
 
 body{
@@ -45,7 +45,7 @@ body{
 
 /* CONTAINER */
 .app{
-  padding:80px 20px 40px;
+  padding:80px 16px 40px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -57,53 +57,54 @@ body{
   max-width:420px;
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:18px;
+  gap:16px;
 }
 
-/* PRODUCT CARD – COERENTE CON CATALOGO */
+/* PRODUCT – SAME SIZE ALWAYS */
 .product{
-  width:100%;
-  aspect-ratio:1 / 1;
+  height:180px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  cursor:pointer;
+}
+
+/* CARD */
+.product-card{
+  flex:1;
   border-radius:22px;
   background:#000;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:10px;
-  cursor:pointer;
   box-shadow:
     0 0 0 2px var(--green),
     0 0 0 4px var(--red);
 }
 
 /* IMG */
-.product img{
-  width:70px;
-  height:70px;
+.product-card img{
+  width:72px;
+  height:72px;
   border-radius:14px;
   object-fit:cover;
 }
 
-/* NAME – ALTEZZA FISSA COME ITEM-TITLE */
+/* NAME – AUTO SCALE TEXT */
 .name{
-  width:100%;
   height:36px;
   display:flex;
   align-items:center;
   justify-content:center;
-
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1.4px;
-  color:#000;
-  text-align:center;
-
-  padding:0 10px;
+  padding:0 6px;
   border-radius:12px;
   background:linear-gradient(135deg,var(--green),var(--white),var(--red));
+  color:#000;
+  font-weight:900;
+  text-align:center;
   line-height:1.1;
 
+  font-size:clamp(9px, 3.5vw, 12px);
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -134,7 +135,7 @@ video{
   pointer-events:none;
 }
 
-/* ARROWS – COERENTI */
+/* ARROWS */
 .nav{
   position:absolute;
   top:50%;
@@ -182,7 +183,7 @@ video{
     0 0 0 2px var(--red);
 }
 
-/* CTA – STESSO STILE CATALOGO */
+/* CTA */
 .contact{
   width:100%;
   max-width:420px;
@@ -241,7 +242,9 @@ function render(){
   products.forEach(p => {
     const d = document.createElement("div");
     d.className = "product";
-    d.innerHTML = '<img src="'+p.previewImage+'"><div class="name">'+p.name+'</div>';
+    d.innerHTML =
+      '<div class="product-card"><img src="'+p.previewImage+'"></div>' +
+      '<div class="name">'+p.name+'</div>';
     d.onclick = () => openModal(p);
     box.appendChild(d);
   });
