@@ -16,5 +16,23 @@
       { "quantity": 50, "price": 500 },
       { "quantity": 100, "price": 950 }
     ]
+  },
+  {
+    "id": 2,
+    "name": "PLASMA STATIC",
+    "category": "stock1",
+    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771331515/2.2_jdxubz.png",
+    "videos": [
+      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771331407/2_cbucpa.mp4",
+      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771331511/2.1_vtumpl.mp4"
+    ],
+    "prices": [
+      { "quantity": 2, "price": 40 },
+      { "quantity": 5, "price": 80 },
+      { "quantity": 10, "price": 140 },
+      { "quantity": 25, "price": 270 },
+      { "quantity": 50, "price": 500 },
+      { "quantity": 100, "price": 950 }
+    ]
   }
 ]
