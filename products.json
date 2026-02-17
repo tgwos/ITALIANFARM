@@ -3,15 +3,17 @@
 {
   "id": 1,
   "name": "PREMIUM PATRON",
-  "mediaType": "video",
-  "mediaUrl": "https://res.cloudinary.com/dizbl4jib/video/upload/v1769172291/DRYCRIME_vxojr7.mp4",
-  "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1769172366/drycrime_hptrrf.png",
+  "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771326045/1.2_odqs7n.png",
+  "videos": [
+    "https://res.cloudinary.com/dizbl4jib/video/upload/v1771325833/1.1_k9ktwh.mp4",
+    "https://res.cloudinary.com/dizbl4jib/video/upload/v1771325833/1.1_k9ktwh.mp4"
+  ],
   "category": "stock1",
   "prices": [
-    {"quantity": 50, "price": 200},
-    {"quantity": 100, "price": 380},
-    {"quantity": 500, "price": 1500},
-    {"quantity": 1000, "price": 2800}
+    { "quantity": 50, "price": 200 },
+    { "quantity": 100, "price": 380 },
+    { "quantity": 500, "price": 1500 },
+    { "quantity": 1000, "price": 2800 }
   ]
 },
   {
