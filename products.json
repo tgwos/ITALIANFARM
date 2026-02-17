@@ -36,13 +36,13 @@
     ]
   },
   {
-    "id": 2,
-    "name": "PLASMA STATIC",
+    "id": 3,
+    "name": "FROZEN PREMIUM",
     "category": "stock1",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771331515/2.2_jdxubz.png",
+    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771332084/3.2_ntmqri.png",
     "videos": [
-      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771331407/2_cbucpa.mp4",
-      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771331511/2.1_vtumpl.mp4"
+      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771332166/3_lpncrk.mp4",
+      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771332313/3.1_uriiox.mp4"
     ],
     "prices": [
       { "quantity": 2, "price": 50 },
@@ -50,7 +50,7 @@
       { "quantity": 10, "price": 190 },
       { "quantity": 25, "price": 400 },
       { "quantity": 50, "price": 750 },
-      { "quantity": 100, "price": 1450 }
+      { "quantity": 100, "price": 1350 }
     ]
   }
 ]
