@@ -9,10 +9,12 @@
       "https://res.cloudinary.com/dizbl4jib/video/upload/v1771325833/1.1_k9ktwh.mp4"
     ],
     "prices": [
-      { "quantity": 50, "price": 200 },
-      { "quantity": 100, "price": 380 },
-      { "quantity": 500, "price": 1500 },
-      { "quantity": 1000, "price": 2800 }
+      { "quantity": 2, "price": 40 },
+      { "quantity": 5, "price": 80 },
+      { "quantity": 10, "price": 140 },
+      { "quantity": 25, "price": 270 },
+      { "quantity": 50, "price": 500 },
+      { "quantity": 100, "price": 950 }
     ]
   }
 ]
