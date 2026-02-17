@@ -15,7 +15,6 @@
   --bg:#000;
 }
 
-/* RESET */
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 
 body{
@@ -50,7 +49,6 @@ body{
   gap:22px;
 }
 
-/* HEADER BUBBLE */
 .bubble{
   width:100%;
   max-width:420px;
@@ -98,16 +96,23 @@ body{
   gap:18px;
 }
 
-/* STOCK CARD */
-.stock-card{
-  aspect-ratio:1/1;
-  border-radius:22px;
-  background:#000;
+/* ITEM */
+.item{
   display:flex;
   flex-direction:column;
   align-items:center;
+  gap:8px;
+}
+
+/* CARD */
+.stock-card{
+  aspect-ratio:1/1;
+  width:100%;
+  border-radius:22px;
+  background:#000;
+  display:flex;
+  align-items:center;
   justify-content:center;
-  gap:12px;
   cursor:pointer;
   box-shadow:
     0 0 0 2px var(--green),
@@ -121,19 +126,17 @@ body{
   object-fit:cover;
 }
 
-.stock-card span{
-  padding:6px 16px;
-  border-radius:12px;
+/* TITLE OUTSIDE */
+.item-title{
+  text-align:center;
   font-size:12px;
   font-weight:900;
   letter-spacing:1.6px;
+  padding:6px 10px;
+  border-radius:12px;
   background:linear-gradient(135deg,var(--green),var(--white),var(--red));
   color:#000;
-}
-
-/* SMALL */
-@media(max-width:360px){
-  .stock-card span{font-size:11px;}
+  width:100%;
 }
 </style>
 </head>
@@ -143,52 +146,61 @@ body{
 <div class="back" onclick="goBack()">⬅ BACK</div>
 
 <div class="container">
-
   <div class="bubble">CATALOGO</div>
 
   <div class="panel">
     <div class="grid">
 
-      
-
-      <div class="stock-card" onclick="openStock('stock-1.html')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>BLUE MAGIC PATRON</span>
+      <div class="item" onclick="openStock('stock-1.html')">
+        <div class="stock-card">
+          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
+        </div>
+        <div class="item-title">BLUE MAGIC PATRON</div>
       </div>
 
-      <div class="stock-card" onclick="openStock('stock-2.html')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>FROZEN</span>
+      <div class="item" onclick="openStock('stock-2.html')">
+        <div class="stock-card">
+          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
+        </div>
+        <div class="item-title">FROZEN</div>
       </div>
 
-      <div class="stock-card" onclick="openStock('stock-3.html')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>CALI</span>
-      </div>
-      <div class="stock-card" onclick="openStock('stock-4.html')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>PROMO</span>
-      </div>
-      <div class="stock-card" onclick="openStock('stock-5.html')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>ICE</span>
+      <div class="item" onclick="openStock('stock-3.html')">
+        <div class="stock-card">
+          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
+        </div>
+        <div class="item-title">CALI</div>
       </div>
 
-      <div class="stock-card" onclick="openStock('stock-6.html')">
-        <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        <span>PEN THC</span>
+      <div class="item" onclick="openStock('stock-4.html')">
+        <div class="stock-card">
+          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
+        </div>
+        <div class="item-title">PROMO</div>
+      </div>
+
+      <div class="item" onclick="openStock('stock-5.html')">
+        <div class="stock-card">
+          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
+        </div>
+        <div class="item-title">ICE</div>
+      </div>
+
+      <div class="item" onclick="openStock('stock-6.html')">
+        <div class="stock-card">
+          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
+        </div>
+        <div class="item-title">PEN THC</div>
       </div>
 
     </div>
   </div>
-
 </div>
 
 <script>
 const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
-
 tg.BackButton.show();
 tg.BackButton.onClick(goBack);
 
