@@ -24,12 +24,12 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
 }
 
-/* BACK */
+/* BACK GLOBAL */
 .back{
   position:fixed;
   top:12px;
   left:12px;
-  z-index:1000;
+  z-index:2000;
   padding:10px 14px;
   font-size:13px;
   font-weight:900;
@@ -82,7 +82,7 @@ body{
   background:#000;
   display:none;
   flex-direction:column;
-  z-index:999;
+  z-index:1500;
 }
 
 /* VIDEO */
@@ -102,21 +102,22 @@ body{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  width:44px;
-  height:44px;
-  background:rgba(0,0,0,.6);
+  width:48px;
+  height:48px;
+  background:rgba(0,0,0,.7);
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:24px;
+  font-size:26px;
   font-weight:900;
   cursor:pointer;
   user-select:none;
+  z-index:1600;
 }
 
-.nav.left{left:10px}
-.nav.right{right:10px}
+.nav.left{left:12px}
+.nav.right{right:12px}
 
 /* PRICES */
 .prices{
@@ -150,7 +151,7 @@ body{
 
 <body>
 
-<div class="back" onclick="closeModal()">←</div>
+<div class="back" id="backBtn">←</div>
 
 <div class="app">
   <div class="products" id="products"></div>
@@ -158,30 +159,33 @@ body{
 
 <div class="modal" id="modal">
   <div class="video-box">
-    <div class="nav left" id="prev">‹</div>
-    <div class="nav right" id="next">›</div>
+    <div class="nav left" id="prevBtn">‹</div>
+    <div class="nav right" id="nextBtn">›</div>
     <video id="video" controls playsinline></video>
   </div>
   <div class="prices" id="prices"></div>
-  <div class="buy" onclick="order()">🛒 ACQUISTA</div>
+  <div class="buy" id="contactBtn">💬 CONTATTA</div>
 </div>
 
 <script>
+const tg = window.Telegram.WebApp;
+tg.ready();
+tg.expand();
+
 const CATEGORY = "stock1";
 const CONTACT = "Italianfarm1";
 
 let products = [];
-let currentIndex = 0;
 let currentProduct = null;
+let currentVideoIndex = 0;
 
-/* LOAD JSON */
+/* LOAD PRODUCTS */
 fetch("products.json?v=" + Date.now())
-  .then(response => response.json())
+  .then(r => r.json())
   .then(json => {
     products = json.filter(p => p.category === CATEGORY);
     renderProducts();
-  })
-  .catch(err => console.error("Errore JSON:", err));
+  });
 
 function renderProducts(){
   const box = document.getElementById("products");
@@ -192,19 +196,22 @@ function renderProducts(){
     card.innerHTML =
       '<img src="' + p.previewImage + '">' +
       '<div class="name">' + p.name + '</div>';
-    card.addEventListener("click", () => openModal(p));
+    card.onclick = () => openModal(p);
     box.appendChild(card);
   });
 }
 
+/* MODAL OPEN */
 function openModal(p){
   currentProduct = p;
-  currentIndex = 0;
+  currentVideoIndex = 0;
   document.getElementById("modal").style.display = "flex";
   loadVideo();
   loadPrices();
+  tg.BackButton.show();
 }
 
+/* VIDEO */
 function loadVideo(){
   const video = document.getElementById("video");
   if (!currentProduct.videos || currentProduct.videos.length === 0) {
@@ -212,49 +219,58 @@ function loadVideo(){
     return;
   }
   video.style.display = "block";
-  video.src = currentProduct.videos[currentIndex];
+  video.src = currentProduct.videos[currentVideoIndex];
   video.load();
 }
 
-document.getElementById("next").addEventListener("click", () => {
+/* VIDEO NAV */
+document.getElementById("nextBtn").onclick = () => {
   if (!currentProduct || !currentProduct.videos) return;
-  currentIndex = (currentIndex + 1) % currentProduct.videos.length;
+  currentVideoIndex = (currentVideoIndex + 1) % currentProduct.videos.length;
   loadVideo();
-});
+};
 
-document.getElementById("prev").addEventListener("click", () => {
+document.getElementById("prevBtn").onclick = () => {
   if (!currentProduct || !currentProduct.videos) return;
-  currentIndex =
-    (currentIndex - 1 + currentProduct.videos.length) %
+  currentVideoIndex =
+    (currentVideoIndex - 1 + currentProduct.videos.length) %
     currentProduct.videos.length;
   loadVideo();
-});
+};
 
+/* PRICES */
 function loadPrices(){
   const box = document.getElementById("prices");
   box.innerHTML = "";
   if (!currentProduct.prices) return;
-  currentProduct.prices.forEach(item => {
-    const div = document.createElement("div");
-    div.className = "price";
-    div.innerHTML =
-      item.quantity + " g<br><strong>€" + item.price + "</strong>";
-    box.appendChild(div);
+  currentProduct.prices.forEach(p => {
+    const d = document.createElement("div");
+    d.className = "price";
+    d.innerHTML = p.quantity + " g<br><strong>€" + p.price + "</strong>";
+    box.appendChild(d);
   });
 }
 
-function order(){
+/* CONTACT */
+document.getElementById("contactBtn").onclick = () => {
   if (!currentProduct) return;
-  const msg = encodeURIComponent("Hai scelto: " + currentProduct.name);
+  const msg = encodeURIComponent(
+    "Ciao, sono interessato al prodotto: " + currentProduct.name
+  );
   window.open("https://t.me/" + CONTACT + "?text=" + msg, "_blank");
-}
+};
 
+/* BACK */
 function closeModal(){
   document.getElementById("modal").style.display = "none";
-  const video = document.getElementById("video");
-  video.pause();
-  video.src = "";
+  const v = document.getElementById("video");
+  v.pause();
+  v.src = "";
+  tg.BackButton.hide();
 }
+
+document.getElementById("backBtn").onclick = closeModal;
+tg.BackButton.onClick(closeModal);
 </script>
 
 </body>
