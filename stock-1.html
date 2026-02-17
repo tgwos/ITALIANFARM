@@ -40,7 +40,7 @@ body{
   cursor:pointer;
 }
 
-/* CONTAINER (same proportions as catalog) */
+/* CONTAINER */
 .app{
   padding:80px 20px 40px;
   display:flex;
@@ -56,7 +56,7 @@ body{
   gap:18px;
 }
 
-/* PRODUCT CARD (catalog look) */
+/* PRODUCT */
 .product{
   aspect-ratio:1/1;
   border-radius:22px;
@@ -81,13 +81,11 @@ body{
 }
 
 .name{
-  padding:6px 12px;
-  border-radius:12px;
+  margin-top:8px;
   font-size:12px;
   font-weight:900;
   letter-spacing:1.4px;
-  background:linear-gradient(135deg,var(--green),var(--white),var(--red));
-  color:#000;
+  color:#fff;
   text-align:center;
 }
 
@@ -115,14 +113,14 @@ video{
   pointer-events:none;
 }
 
-/* ARROWS */
+/* ARROWS (default, simple) */
 .nav{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
   width:60px;
   height:60px;
-  background:linear-gradient(135deg, rgba(0,255,136,.9), rgba(255,255,255,.9), rgba(255,42,42,.9));
+  background:rgba(0,0,0,.6);
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -131,11 +129,7 @@ video{
   font-weight:900;
   cursor:pointer;
   user-select:none;
-  box-shadow:
-    0 0 0 2px #000,
-    0 0 12px rgba(0,255,136,.8),
-    0 0 18px rgba(255,42,42,.6);
-  color:#000;
+  color:#fff;
   pointer-events:auto;
 }
 
@@ -208,93 +202,90 @@ let products = [];
 let product = null;
 let videoIndex = 0;
 
-/* LOAD JSON */
-fetch("products.json?v="+Date.now())
-.then(r=>r.json())
-.then(j=>{
-  products = j.filter(p=>p.category===CATEGORY);
+fetch("products.json?v=" + Date.now())
+.then(r => r.json())
+.then(j => {
+  products = j.filter(p => p.category === CATEGORY);
   render();
 });
 
 function render(){
-  const box=document.getElementById("products");
-  products.forEach(p=>{
-    const d=document.createElement("div");
-    d.className="product";
-    d.innerHTML='<img src="'+p.previewImage+'"><div class="name">'+p.name+'</div>';
-    d.onclick=()=>openModal(p);
+  const box = document.getElementById("products");
+  box.innerHTML = "";
+  products.forEach(p => {
+    const d = document.createElement("div");
+    d.className = "product";
+    d.innerHTML = '<img src="'+p.previewImage+'"><div class="name">'+p.name+'</div>';
+    d.onclick = () => openModal(p);
     box.appendChild(d);
   });
 }
 
 function openModal(p){
-  product=p;
-  videoIndex=0;
-  document.getElementById("modal").style.display="flex";
+  product = p;
+  videoIndex = 0;
+  document.getElementById("modal").style.display = "flex";
   loadVideo();
   loadPrices();
   tg.BackButton.show();
 }
 
 function loadVideo(){
-  const v=document.getElementById("video");
-  if(!product.videos||product.videos.length===0)return;
-  v.src=product.videos[videoIndex];
+  const v = document.getElementById("video");
+  if(!product.videos || product.videos.length === 0) return;
+  v.src = product.videos[videoIndex];
   v.load();
 }
 
-document.getElementById("next").onclick=()=>{
-  if(!product||!product.videos)return;
-  videoIndex=(videoIndex+1)%product.videos.length;
+document.getElementById("next").onclick = () => {
+  if(!product || !product.videos) return;
+  videoIndex = (videoIndex + 1) % product.videos.length;
   loadVideo();
 };
 
-document.getElementById("prev").onclick=()=>{
-  if(!product||!product.videos)return;
-  videoIndex=(videoIndex-1+product.videos.length)%product.videos.length;
+document.getElementById("prev").onclick = () => {
+  if(!product || !product.videos) return;
+  videoIndex = (videoIndex - 1 + product.videos.length) % product.videos.length;
   loadVideo();
 };
 
-/* PRICES */
 function loadPrices(){
-  const box=document.getElementById("prices");
-  box.innerHTML="";
-  if(!product.prices)return;
-  product.prices.forEach(p=>{
-    const d=document.createElement("div");
-    d.className="price";
-    d.innerHTML=p.quantity+" g<br><strong>€"+p.price+"</strong>";
+  const box = document.getElementById("prices");
+  box.innerHTML = "";
+  if(!product.prices) return;
+  product.prices.forEach(p => {
+    const d = document.createElement("div");
+    d.className = "price";
+    d.innerHTML = p.quantity + " g<br><strong>€" + p.price + "</strong>";
     box.appendChild(d);
   });
 }
 
-/* CONTACT */
-document.getElementById("contactBtn").onclick=()=>{
-  if(!product)return;
-  const msg=encodeURIComponent("Ciao, sono interessato al prodotto: "+product.name);
-  window.open("https://t.me/"+CONTACT+"?text="+msg,"_blank");
+document.getElementById("contactBtn").onclick = () => {
+  if(!product) return;
+  const msg = encodeURIComponent("Ciao, sono interessato al prodotto: " + product.name);
+  window.open("https://t.me/" + CONTACT + "?text=" + msg, "_blank");
 };
 
-/* BACK */
 function closeModal(){
-  document.getElementById("modal").style.display="none";
-  document.getElementById("video").src="";
+  document.getElementById("modal").style.display = "none";
+  document.getElementById("video").src = "";
   tg.BackButton.hide();
 }
 
-document.getElementById("backBtn").onclick=()=>{
-  if(document.getElementById("modal").style.display==="flex"){
+document.getElementById("backBtn").onclick = () => {
+  if(document.getElementById("modal").style.display === "flex"){
     closeModal();
-  }else{
-    location.href="catalog.html";
+  } else {
+    location.href = "catalog.html";
   }
 };
 
-tg.BackButton.onClick(()=>{
-  if(document.getElementById("modal").style.display==="flex"){
+tg.BackButton.onClick(() => {
+  if(document.getElementById("modal").style.display === "flex"){
     closeModal();
-  }else{
-    location.href="catalog.html";
+  } else {
+    location.href = "catalog.html";
   }
 });
 </script>
