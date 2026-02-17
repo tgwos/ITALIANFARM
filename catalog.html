@@ -27,7 +27,7 @@ body{
   background:var(--bg);
 }
 
-/* BACK BUTTON */
+/* BACK */
 .back{
   position:fixed;
   top:calc(12px + env(safe-area-inset-top));
@@ -40,7 +40,6 @@ body{
   background:#000;
   border:2px solid var(--green);
   box-shadow:0 0 10px var(--green);
-  cursor:pointer;
 }
 
 /* CONTAINER */
@@ -100,12 +99,12 @@ body{
   gap:16px;
 }
 
-/* ITEM */
+/* ITEM (ALL SAME SIZE) */
 .item{
   height:180px;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:8px;
   cursor:pointer;
 }
 
@@ -120,14 +119,6 @@ body{
   box-shadow:
     0 0 0 2px var(--green),
     0 0 0 4px var(--red);
-  transition:transform .15s ease, box-shadow .15s ease;
-}
-
-.stock-card:active{
-  transform:scale(.96);
-  box-shadow:
-    0 0 0 2px var(--white),
-    0 0 0 4px var(--green);
 }
 
 /* IMG */
@@ -138,21 +129,21 @@ body{
   object-fit:cover;
 }
 
-/* TITLE */
+/* TITLE – AUTO SCALE */
 .item-title{
-  height:40px;
+  height:36px;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1.4px;
-  padding:0 8px;
+  padding:0 6px;
   border-radius:12px;
   background:linear-gradient(135deg,var(--green),var(--white),var(--red));
   color:#000;
+  font-weight:900;
+  text-align:center;
   line-height:1.1;
+
+  font-size:clamp(9px, 3.5vw, 12px); /* AUTO RIDIMENSIONA TESTO */
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -236,3 +227,4 @@ function openStock(p){
 
 </body>
 </html>
+
