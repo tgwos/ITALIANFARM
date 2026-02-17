@@ -58,17 +58,21 @@ body{
   text-align:center;
   font-size:22px;
   font-weight:900;
-  letter-spacing:4px;
+  letter-spacing:3px;
   box-shadow:0 0 12px var(--green),0 0 22px var(--red);
 }
 
+/* PANEL */
 .panel{
   width:100%;
   max-width:420px;
   background:#050505;
   border-radius:30px;
   padding:22px;
-  box-shadow:0 0 0 2px var(--green),0 0 0 4px var(--white),0 0 0 6px var(--red);
+  box-shadow:
+    0 0 0 2px var(--green),
+    0 0 0 4px var(--white),
+    0 0 0 6px var(--red);
 }
 
 /* GRID */
@@ -114,14 +118,16 @@ body{
   z-index:999;
 }
 
+/* VIDEO AREA */
 .modal-media{
   position:relative;
+  padding-top:40px;
   background:#000;
 }
 
 .modal-media video{
   width:100%;
-  max-height:50vh;
+  height:60vh;
   object-fit:contain;
 }
 
@@ -130,9 +136,9 @@ body{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  font-size:26px;
+  font-size:28px;
   font-weight:900;
-  padding:10px;
+  padding:12px;
   background:rgba(0,0,0,.6);
   border-radius:50%;
   cursor:pointer;
@@ -142,6 +148,7 @@ body{
 .arrow.left{left:10px}
 .arrow.right{right:10px}
 
+/* INFO */
 .modal-info{
   flex:1;
   padding:20px;
@@ -185,7 +192,7 @@ body{
 <div class="back-to-catalog" onclick="goBack()">← Catalogo</div>
 
 <div class="app">
-  <div class="bubble">PRODOTTI</div>
+  <div class="bubble" id="productTitle">PRODOTTI</div>
   <div class="panel">
     <div class="products" id="products"></div>
   </div>
@@ -195,7 +202,7 @@ body{
   <div class="modal-media">
     <div class="arrow left" onclick="prevVideo()">‹</div>
     <div class="arrow right" onclick="nextVideo()">›</div>
-    <video id="modalVideo" controls></video>
+    <video id="modalVideo" controls playsinline></video>
   </div>
   <div class="modal-info">
     <div id="priceList"></div>
@@ -209,70 +216,100 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
+const CATEGORY = "stock1";
+const CONTACT_USERNAME = "Italianfarm1";
+
+let productsData = [];
 let selectedProduct = null;
 let currentVideo = 0;
 
-/* DEMO PRODUCTS (usa videos: []) */
-const products = [
-  {
-    name:"Prodotto 1",
-    previewImage:"https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg",
-    videos:[
-      "video1.mp4",
-      "video2.mp4",
-      "video3.mp4"
-    ],
-    prices:[{quantity:1,price:10}]
-  }
-];
+/* LOAD PRODUCTS.JSON */
+fetch("products.json?v=" + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    productsData = data.filter(p => p.category === CATEGORY);
+    renderProducts();
+  });
 
-const box=document.getElementById("products");
-products.forEach(p=>{
-  const card=document.createElement("div");
-  card.className="product";
-  card.innerHTML='<div class="media"><img src="'+p.previewImage+'"></div><div class="name">'+p.name+'</div>';
-  card.onclick=()=>openModal(p);
-  box.appendChild(card);
-});
-
-function openModal(p){
-  selectedProduct=p;
-  currentVideo=0;
-  showVideo();
-  document.getElementById("priceList").innerHTML='<div class="price-row"><span>1 g</span><strong>€'+p.prices[0].price+'</strong></div>';
-  document.getElementById("modal").style.display="flex";
+function renderProducts(){
+  const box = document.getElementById("products");
+  box.innerHTML = "";
+  productsData.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "product";
+    card.innerHTML = `
+      <div class="media">
+        <img src="${p.previewImage}">
+      </div>
+      <div class="name">${p.name}</div>
+    `;
+    card.onclick = () => openModal(p);
+    box.appendChild(card);
+  });
 }
 
-function showVideo(){
-  const v=document.getElementById("modalVideo");
-  v.src=selectedProduct.videos[currentVideo];
-  v.load();
+/* MODAL */
+function openModal(p){
+  selectedProduct = p;
+  currentVideo = 0;
+
+  document.getElementById("productTitle").textContent = p.name;
+
+  renderVideo();
+  renderPrices();
+
+  document.getElementById("modal").style.display = "flex";
+}
+
+function renderVideo(){
+  const video = document.getElementById("modalVideo");
+  if (!selectedProduct.videos || selectedProduct.videos.length === 0) {
+    video.style.display = "none";
+    return;
+  }
+  video.style.display = "block";
+  video.src = selectedProduct.videos[currentVideo];
+  video.load();
 }
 
 function nextVideo(){
-  if(!selectedProduct) return;
-  currentVideo=(currentVideo+1)%selectedProduct.videos.length;
-  showVideo();
+  if(!selectedProduct || !selectedProduct.videos) return;
+  currentVideo = (currentVideo + 1) % selectedProduct.videos.length;
+  renderVideo();
 }
 
 function prevVideo(){
-  if(!selectedProduct) return;
-  currentVideo=(currentVideo-1+selectedProduct.videos.length)%selectedProduct.videos.length;
-  showVideo();
+  if(!selectedProduct || !selectedProduct.videos) return;
+  currentVideo =
+    (currentVideo - 1 + selectedProduct.videos.length) %
+    selectedProduct.videos.length;
+  renderVideo();
+}
+
+function renderPrices(){
+  const list = document.getElementById("priceList");
+  list.innerHTML = "";
+  (selectedProduct.prices || []).forEach(i => {
+    const row = document.createElement("div");
+    row.className = "price-row";
+    row.innerHTML = `<span>${i.quantity} g</span><strong>€${i.price}</strong>`;
+    list.appendChild(row);
+  });
 }
 
 function closeModal(){
-  document.getElementById("modal").style.display="none";
-  document.getElementById("modalVideo").src="";
+  document.getElementById("modal").style.display = "none";
+  document.getElementById("modalVideo").src = "";
 }
 
 function order(){
   if(!selectedProduct) return;
-  alert("Hai scelto: "+selectedProduct.name);
+  const msg = encodeURIComponent("Hai scelto: " + selectedProduct.name);
+  window.open("https://t.me/" + CONTACT_USERNAME + "?text=" + msg, "_blank");
 }
 
 function goBack(){
-  window.location.href="catalog.html";
+  window.location.href = "catalog.html";
 }
 </script>
 
