@@ -27,12 +27,12 @@
       "https://res.cloudinary.com/dizbl4jib/video/upload/v1771331511/2.1_vtumpl.mp4"
     ],
     "prices": [
-      { "quantity": 2, "price": 40 },
-      { "quantity": 5, "price": 80 },
-      { "quantity": 10, "price": 140 },
-      { "quantity": 25, "price": 270 },
-      { "quantity": 50, "price": 500 },
-      { "quantity": 100, "price": 950 }
+      { "quantity": 2, "price": 50 },
+      { "quantity": 5, "price": 10 },
+      { "quantity": 10, "price": 190 },
+      { "quantity": 25, "price": 400 },
+      { "quantity": 50, "price": 750 },
+      { "quantity": 100, "price": 1450 }
     ]
   }
 ]
