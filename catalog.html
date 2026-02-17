@@ -15,7 +15,10 @@
   --bg:#000;
 }
 
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent
+}
 
 body{
   margin:0;
@@ -49,6 +52,7 @@ body{
   gap:22px;
 }
 
+/* HEADER */
 .bubble{
   width:100%;
   max-width:420px;
@@ -104,10 +108,10 @@ body{
   gap:8px;
 }
 
-/* CARD */
+/* CARD QUADRATA UGUALE */
 .stock-card{
-  aspect-ratio:1/1;
   width:100%;
+  aspect-ratio:1 / 1;
   border-radius:22px;
   background:#000;
   display:flex;
@@ -119,6 +123,7 @@ body{
     0 0 0 4px var(--red);
 }
 
+/* IMG */
 .stock-card img{
   width:70px;
   height:70px;
@@ -126,17 +131,27 @@ body{
   object-fit:cover;
 }
 
-/* TITLE OUTSIDE */
+/* TITOLO ALTEZZA FISSA */
 .item-title{
+  width:100%;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
   text-align:center;
   font-size:12px;
   font-weight:900;
   letter-spacing:1.6px;
-  padding:6px 10px;
+  padding:0 10px;
   border-radius:12px;
   background:linear-gradient(135deg,var(--green),var(--white),var(--red));
   color:#000;
-  width:100%;
+  line-height:1.1;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 </style>
 </head>
@@ -162,14 +177,14 @@ body{
         <div class="stock-card">
           <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
         </div>
-        <div class="item-title">DRY </div>
+        <div class="item-title">DRY</div>
       </div>
 
       <div class="item" onclick="openStock('stock-3.html')">
         <div class="stock-card">
           <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
         </div>
-        <div class="item-title">FROZEN/STATIC</div>
+        <div class="item-title">FROZEN / STATIC</div>
       </div>
 
       <div class="item" onclick="openStock('stock-4.html')">
