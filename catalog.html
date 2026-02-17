@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Italian Farm – Catalogo</title>
+<title>Italian Farm – Stock</title>
 
 <script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
 
@@ -29,7 +29,7 @@ body{
   position:fixed;
   top:calc(12px + env(safe-area-inset-top));
   left:12px;
-  z-index:10;
+  z-index:3000;
   padding:10px 14px;
   font-size:13px;
   font-weight:900;
@@ -40,179 +40,256 @@ body{
   cursor:pointer;
 }
 
-/* CONTAINER */
-.container{
+/* CONTAINER (same proportions as catalog) */
+.app{
   padding:80px 20px 40px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:22px;
 }
 
-.bubble{
+.products{
   width:100%;
   max-width:420px;
-  background:
-    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
-    url("https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg")
-    center/contain no-repeat;
-  border-radius:26px;
-  padding:24px;
-  text-align:center;
-  font-size:22px;
-  font-weight:900;
-  letter-spacing:5px;
-  box-shadow:
-    0 0 12px var(--green),
-    0 0 22px var(--red);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
 }
 
-.bubble::after{
-  content:"Scegli una categoria";
-  display:block;
-  margin-top:10px;
-  font-size:11px;
-  letter-spacing:2px;
-  opacity:.75;
-}
-
-/* PANEL */
-.panel{
-  width:100%;
-  max-width:420px;
-  background:#050505;
-  border-radius:30px;
-  padding:24px;
+/* PRODUCT CARD (catalog look) */
+.product{
+  aspect-ratio:1/1;
+  border-radius:22px;
+  background:#000;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  cursor:pointer;
   box-shadow:
     0 0 0 2px var(--green),
     0 0 0 4px var(--white),
     0 0 0 6px var(--red);
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:18px;
-}
-
-/* ITEM */
-.item{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:8px;
-}
-
-/* CARD */
-.stock-card{
-  aspect-ratio:1/1;
-  width:100%;
-  border-radius:22px;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-  box-shadow:
-    0 0 0 2px var(--green),
-    0 0 0 4px var(--red);
-}
-
-.stock-card img{
+.product img{
   width:70px;
   height:70px;
   border-radius:14px;
   object-fit:cover;
 }
 
-/* TITLE OUTSIDE */
-.item-title{
-  text-align:center;
+.name{
+  padding:6px 12px;
+  border-radius:12px;
   font-size:12px;
   font-weight:900;
-  letter-spacing:1.6px;
-  padding:6px 10px;
-  border-radius:12px;
+  letter-spacing:1.4px;
   background:linear-gradient(135deg,var(--green),var(--white),var(--red));
   color:#000;
+  text-align:center;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.95);
+  display:none;
+  flex-direction:column;
+  z-index:2000;
+}
+
+.video-box{
   width:100%;
+  max-width:420px;
+  margin:20px auto 0;
+  position:relative;
+}
+
+video{
+  width:100%;
+  max-height:50vh;
+  object-fit:contain;
+}
+
+/* ARROWS */
+.nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  background:rgba(0,0,0,.6);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  font-weight:900;
+  cursor:pointer;
+  user-select:none;
+}
+
+.nav.left{left:10px}
+.nav.right{right:10px}
+
+/* PRICES */
+.prices{
+  width:100%;
+  max-width:420px;
+  margin:16px auto 0;
+  padding:16px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:10px;
+}
+
+.price{
+  background:#111;
+  border-radius:14px;
+  padding:12px;
+  text-align:center;
+  font-weight:800;
+  border:1px solid rgba(255,255,255,.15);
+}
+
+/* CTA */
+.contact{
+  width:100%;
+  max-width:420px;
+  margin:16px auto 20px;
+  padding:16px;
+  background:linear-gradient(135deg,var(--green),var(--white),var(--red));
+  color:#000;
+  border-radius:18px;
+  font-weight:900;
+  text-align:center;
+  cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-<div class="back" onclick="goBack()">⬅ BACK</div>
+<div class="back" id="backBtn">←</div>
 
-<div class="container">
-  <div class="bubble">CATALOGO</div>
+<div class="app">
+  <div class="products" id="products"></div>
+</div>
 
-  <div class="panel">
-    <div class="grid">
-
-      <div class="item" onclick="openStock('stock-1.html')">
-        <div class="stock-card">
-          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        </div>
-        <div class="item-title">BLUE MAGIC PATRON</div>
-      </div>
-
-      <div class="item" onclick="openStock('stock-2.html')">
-        <div class="stock-card">
-          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        </div>
-        <div class="item-title">DRY </div>
-      </div>
-
-      <div class="item" onclick="openStock('stock-3.html')">
-        <div class="stock-card">
-          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        </div>
-        <div class="item-title">FROZEN/STATIC</div>
-      </div>
-
-      <div class="item" onclick="openStock('stock-4.html')">
-        <div class="stock-card">
-          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        </div>
-        <div class="item-title">COCAINA</div>
-      </div>
-
-      <div class="item" onclick="openStock('stock-5.html')">
-        <div class="stock-card">
-          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        </div>
-        <div class="item-title">SINTETICI</div>
-      </div>
-
-      <div class="item" onclick="openStock('stock-6.html')">
-        <div class="stock-card">
-          <img src="https://tgwos.github.io/ITALIANFARM/5807439531530194108.jpg">
-        </div>
-        <div class="item-title">PROMO</div>
-      </div>
-
-    </div>
+<div class="modal" id="modal">
+  <div class="video-box">
+    <div class="nav left" id="prev">‹</div>
+    <div class="nav right" id="next">›</div>
+    <video id="video" controls playsinline></video>
   </div>
+  <div class="prices" id="prices"></div>
+  <div class="contact" id="contactBtn">💬 CONTATTA</div>
 </div>
 
 <script>
 const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
-tg.BackButton.show();
-tg.BackButton.onClick(goBack);
 
-function goBack(){
-  tg.BackButton.hide();
-  location.href = "index.html";
+const CATEGORY = "stock1";
+const CONTACT = "Italianfarm1";
+
+let products = [];
+let product = null;
+let videoIndex = 0;
+
+/* LOAD JSON */
+fetch("products.json?v="+Date.now())
+.then(r=>r.json())
+.then(j=>{
+  products = j.filter(p=>p.category===CATEGORY);
+  render();
+});
+
+function render(){
+  const box=document.getElementById("products");
+  products.forEach(p=>{
+    const d=document.createElement("div");
+    d.className="product";
+    d.innerHTML='<img src="'+p.previewImage+'"><div class="name">'+p.name+'</div>';
+    d.onclick=()=>openModal(p);
+    box.appendChild(d);
+  });
 }
 
-function openStock(p){
-  tg.BackButton.hide();
-  location.assign(p);
+function openModal(p){
+  product=p;
+  videoIndex=0;
+  document.getElementById("modal").style.display="flex";
+  loadVideo();
+  loadPrices();
+  tg.BackButton.show();
 }
+
+function loadVideo(){
+  const v=document.getElementById("video");
+  if(!product.videos||product.videos.length===0)return;
+  v.src=product.videos[videoIndex];
+  v.load();
+}
+
+document.getElementById("next").onclick=()=>{
+  if(!product||!product.videos)return;
+  videoIndex=(videoIndex+1)%product.videos.length;
+  loadVideo();
+};
+
+document.getElementById("prev").onclick=()=>{
+  if(!product||!product.videos)return;
+  videoIndex=(videoIndex-1+product.videos.length)%product.videos.length;
+  loadVideo();
+};
+
+/* PRICES */
+function loadPrices(){
+  const box=document.getElementById("prices");
+  box.innerHTML="";
+  if(!product.prices)return;
+  product.prices.forEach(p=>{
+    const d=document.createElement("div");
+    d.className="price";
+    d.innerHTML=p.quantity+" g<br><strong>€"+p.price+"</strong>";
+    box.appendChild(d);
+  });
+}
+
+/* CONTACT */
+document.getElementById("contactBtn").onclick=()=>{
+  if(!product)return;
+  const msg=encodeURIComponent("Ciao, sono interessato al prodotto: "+product.name);
+  window.open("https://t.me/"+CONTACT+"?text="+msg,"_blank");
+};
+
+/* BACK */
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+  document.getElementById("video").src="";
+  tg.BackButton.hide();
+}
+
+document.getElementById("backBtn").onclick=()=>{
+  if(document.getElementById("modal").style.display==="flex"){
+    closeModal();
+  }else{
+    location.href="catalog.html";
+  }
+};
+
+tg.BackButton.onClick(()=>{
+  if(document.getElementById("modal").style.display==="flex"){
+    closeModal();
+  }else{
+    location.href="catalog.html";
+  }
+});
 </script>
 
 </body>
