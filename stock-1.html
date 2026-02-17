@@ -235,6 +235,11 @@ function loadVideo(){
   if(!product.videos || product.videos.length === 0) return;
   v.src = product.videos[videoIndex];
   v.load();
+  // force play after user interaction (mobile-safe)
+  const playPromise = v.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {});
+  }
 }
 
 document.getElementById("next").onclick = () => {
@@ -292,4 +297,3 @@ tg.BackButton.onClick(() => {
 
 </body>
 </html>
-
