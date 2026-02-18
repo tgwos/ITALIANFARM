@@ -209,5 +209,30 @@
       { "quantity": 50, "price": 380 },
       { "quantity": 100, "price": 700 }
     ]
-  }
+  },
+  "id": 4,
+  "name": "MIX",
+  "category": "stock6",
+  "descriptor": "PLASMA STATIC + FROZEN FREMIUM + PREMIUM PATRON",
+  "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425696/5814528362167340380_1_uyq3jo.jpg",
+  "media": [
+    {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425696/5814528362167340380_1_uyq3jo.jpg"
+    },
+    {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771332084/3.2_ntmqri.png"
+    }, 
+     {
+      "type": "image",
+      "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425421/5814528362167340382_uffzol.jpg"
+    }
+  ],
+  "prices": [
+    { "quantity": 25, "price": 380 },
+    { "quantity": 50, "price": 700 },
+    { "quantity": 100, "price": 1200 },
+  ]
+}
 ]
