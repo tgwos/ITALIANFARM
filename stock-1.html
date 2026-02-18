@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -14,12 +15,7 @@
   --red:#ff2a2a;
   --bg:#000;
 }
-
-*{
-  box-sizing:border-box;
-  -webkit-tap-highlight-color:transparent;
-}
-
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{
   margin:0;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
@@ -60,7 +56,7 @@ body{
   gap:16px;
 }
 
-/* PRODUCT – SAME SIZE ALWAYS */
+/* PRODUCT */
 .product{
   height:190px;
   display:flex;
@@ -82,15 +78,13 @@ body{
     0 0 0 2px var(--green),
     0 0 0 4px var(--red);
 }
-
-/* IMG – BIG PREVIEW */
 .product-card img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
 
-/* NAME – AUTO SCALE TEXT */
+/* NAME */
 .name{
   height:36px;
   display:flex;
@@ -102,7 +96,6 @@ body{
   color:#000;
   font-weight:900;
   text-align:center;
-  line-height:1.1;
   font-size:clamp(9px, 3.5vw, 12px);
   white-space:nowrap;
   overflow:hidden;
@@ -119,19 +112,18 @@ body{
   z-index:2000;
 }
 
-/* VIDEO */
-.video-box{
+/* MEDIA BOX */
+.media-box{
   width:100%;
   max-width:420px;
   margin:20px auto 0;
   position:relative;
 }
-
-video{
+.media-box video,
+.media-box img{
   width:100%;
   max-height:50vh;
   object-fit:contain;
-  pointer-events:none;
 }
 
 /* ARROWS */
@@ -154,9 +146,7 @@ video{
   box-shadow:
     0 0 0 2px var(--green),
     0 0 8px var(--green);
-  pointer-events:auto;
 }
-
 .nav.left{left:10px}
 .nav.right{right:10px}
 
@@ -170,7 +160,6 @@ video{
   grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
   gap:10px;
 }
-
 .price{
   background:#050505;
   border-radius:14px;
@@ -207,10 +196,10 @@ video{
 </div>
 
 <div class="modal" id="modal">
-  <div class="video-box">
+  <div class="media-box">
     <div class="nav left" id="prev">‹</div>
     <div class="nav right" id="next">›</div>
-    <video id="video" controls playsinline></video>
+    <div id="mediaContainer"></div>
   </div>
   <div class="prices" id="prices"></div>
   <div class="contact" id="contactBtn">💬 CONTATTA</div>
@@ -226,8 +215,9 @@ const CONTACT = "Italianfarm1";
 
 let products = [];
 let product = null;
-let videoIndex = 0;
+let mediaIndex = 0;
 
+/* LOAD PRODUCTS */
 fetch("products.json?v=" + Date.now())
 .then(r => r.json())
 .then(j => {
@@ -235,6 +225,7 @@ fetch("products.json?v=" + Date.now())
   render();
 });
 
+/* RENDER GRID */
 function render(){
   const box = document.getElementById("products");
   box.innerHTML = "";
@@ -249,38 +240,52 @@ function render(){
   });
 }
 
+/* OPEN MODAL */
 function openModal(p){
   product = p;
-  videoIndex = 0;
+  mediaIndex = 0;
   document.getElementById("modal").style.display = "flex";
-  loadVideo();
+  loadMedia();
   loadPrices();
   tg.BackButton.show();
 }
 
-function loadVideo(){
-  const v = document.getElementById("video");
-  if(!product.videos || product.videos.length === 0) return;
-  v.src = product.videos[videoIndex];
-  v.load();
-  const playPromise = v.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(() => {});
+/* LOAD MEDIA */
+function loadMedia(){
+  const box = document.getElementById("mediaContainer");
+  box.innerHTML = "";
+  if(!product.media || product.media.length === 0) return;
+
+  const m = product.media[mediaIndex];
+
+  if(m.type === "video"){
+    const v = document.createElement("video");
+    v.src = m.src;
+    v.controls = true;
+    v.playsInline = true;
+    box.appendChild(v);
+    v.play().catch(()=>{});
+  } else if(m.type === "image"){
+    const img = document.createElement("img");
+    img.src = m.src;
+    box.appendChild(img);
   }
 }
 
+/* NAV */
 document.getElementById("next").onclick = () => {
-  if(!product || !product.videos) return;
-  videoIndex = (videoIndex + 1) % product.videos.length;
-  loadVideo();
+  if(!product || !product.media) return;
+  mediaIndex = (mediaIndex + 1) % product.media.length;
+  loadMedia();
 };
 
 document.getElementById("prev").onclick = () => {
-  if(!product || !product.videos) return;
-  videoIndex = (videoIndex - 1 + product.videos.length) % product.videos.length;
-  loadVideo();
+  if(!product || !product.media) return;
+  mediaIndex = (mediaIndex - 1 + product.media.length) % product.media.length;
+  loadMedia();
 };
 
+/* PRICES */
 function loadPrices(){
   const box = document.getElementById("prices");
   box.innerHTML = "";
@@ -293,18 +298,21 @@ function loadPrices(){
   });
 }
 
+/* CONTACT */
 document.getElementById("contactBtn").onclick = () => {
   if(!product) return;
   const msg = encodeURIComponent("Ciao, sono interessato al prodotto: " + product.name);
   window.open("https://t.me/" + CONTACT + "?text=" + msg, "_blank");
 };
 
+/* CLOSE MODAL */
 function closeModal(){
   document.getElementById("modal").style.display = "none";
-  document.getElementById("video").src = "";
+  document.getElementById("mediaContainer").innerHTML = "";
   tg.BackButton.hide();
 }
 
+/* BACK */
 document.getElementById("backBtn").onclick = () => {
   if(document.getElementById("modal").style.display === "flex"){
     closeModal();
