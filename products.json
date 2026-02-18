@@ -4,8 +4,16 @@
     "id": 1,
     "name": "PREMIUM PATRON",
     "category": "stock1",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771326045/1.2_odqs7n.png",
+    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425738/5814528362167340381_r5edwj.jpg",
     "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425696/5814528362167340380_1_uyq3jo.jpg"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425696/5814528362167340380_1_uyq3jo.jpg"
+      },
       {
         "type": "image",
         "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771326045/1.2_odqs7n.png"
