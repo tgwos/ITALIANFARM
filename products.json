@@ -173,5 +173,29 @@
       { "quantity": 50, "price": 1250 },
       { "quantity": 100, "price": 2200 }
     ]
+  },
+   {
+    "id": 4,
+    "name": "STATIC MOUNTAIN TERPS",
+    "category": "stock3",
+    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771423943/7_ww46kc.jpg",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771424584/5814528362167340383_rsaaro.jpg"
+      },
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771423943/7_ww46kc.jpg"
+      }, 
+      {
+        "type": "video",
+        "src": "https://res.cloudinary.com/dizbl4jib/video/upload/v1771423970/7.1_hbadr0.mp4"
+      }
+    ],
+    "prices": [
+      { "quantity": 50, "price": 380 },
+      { "quantity": 100, "price": 700 }
+    ]
   }
 ]
