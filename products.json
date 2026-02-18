@@ -115,5 +115,30 @@
       { "quantity": 500, "price": 1400 },
       { "quantity": 1000, "price": 2700 }
     ]
+  },
+   {
+    "id": 4,
+    "name": "TUSSI B",
+    "category": "stock5",
+    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771421687/Cattura_yfup8j.png",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771421687/Cattura_yfup8j.png"
+      },
+      {
+        "type": "video",
+        "src": "https://res.cloudinary.com/dizbl4jib/video/upload/v1771421584/IMG_3179_qata5c.mp4"
+      }
+    ],
+    "prices": [
+      { "quantity": 1, "price": 50 },
+      { "quantity": 2, "price": 90 },
+      { "quantity": 3, "price": 120 },
+      { "quantity": 5, "price": 170 },
+      { "quantity": 10, "price": 300 },
+      { "quantity": 25, "price": 600 },
+      { "quantity": 50, "price": 1000 }
+    ]
   }
 ]
