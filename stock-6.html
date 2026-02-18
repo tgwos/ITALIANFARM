@@ -202,22 +202,6 @@ body {
   cursor: pointer;
   z-index: 4000;
 }
-  .descriptor {
-  width: 100%;
-  max-width: 420px;
-  margin: 16px auto 0;
-  padding: 12px 16px;
-  font-size: 14px;
-  text-align: center;
-  background: #050505;
-  border-radius: 12px;
-  box-shadow:
-    0 0 0 1px var(--green),
-    0 0 0 2px var(--red);
-  color: var(--white);
-  font-weight: 500;
-  line-height: 1.4;
-}
 </style>
 </head>
 
@@ -234,7 +218,6 @@ body {
     <div class="nav right" id="next">›</div>
     <div id="mediaContainer"></div>
   </div>
-  <div class="descriptor" id="descriptor"></div>
   <div class="prices" id="prices"></div>
   <div class="contact" id="contactBtn">💬 CONTATTA</div>
 </div>
@@ -279,7 +262,6 @@ function openModal(p){
   document.getElementById("modal").style.display = "flex";
   loadMedia();
   loadPrices();
-  document.getElementById("descriptor").innerText = p.descriptor || "";
   tg.BackButton.show();
 }
 
