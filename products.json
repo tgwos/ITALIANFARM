@@ -28,7 +28,7 @@
     ],
     "prices": [
       { "quantity": 2, "price": 50 },
-      { "quantity": 5, "price": 10 },
+      { "quantity": 5, "price": 100 },
       { "quantity": 10, "price": 190 },
       { "quantity": 25, "price": 400 },
       { "quantity": 50, "price": 750 },
@@ -46,7 +46,7 @@
     ],
     "prices": [
       { "quantity": 2, "price": 50 },
-      { "quantity": 5, "price": 10 },
+      { "quantity": 5, "price": 90 },
       { "quantity": 10, "price": 190 },
       { "quantity": 25, "price": 400 },
       { "quantity": 50, "price": 750 },
