@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -9,186 +8,204 @@
 <script src="https://telegram.org/js/telegram-web-app.js?v=6"></script>
 
 <style>
-:root{
-  --green:#00ff88;
-  --white:#ffffff;
-  --red:#ff2a2a;
-  --bg:#000;
+:root {
+  --green: #00ff88;
+  --white: #ffffff;
+  --red: #ff2a2a;
+  --bg: #000;
 }
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
-body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
-  color:#fff;
-  background:var(--bg);
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #fff;
+  background: var(--bg);
 }
 
 /* BACK */
-.back{
-  position:fixed;
-  top:calc(12px + env(safe-area-inset-top));
-  left:12px;
-  z-index:3000;
-  padding:10px 14px;
-  font-size:13px;
-  font-weight:900;
-  border-radius:14px;
-  background:#000;
-  border:2px solid var(--green);
-  box-shadow:0 0 10px var(--green);
-  cursor:pointer;
+.back {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top));
+  left: 12px;
+  z-index: 4000;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 14px;
+  background: #000;
+  border: 2px solid var(--green);
+  box-shadow: 0 0 10px var(--green);
+  cursor: pointer;
 }
 
 /* CONTAINER */
-.app{
-  padding:80px 16px 40px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+.app {
+  padding: 80px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* GRID */
-.products{
-  width:100%;
-  max-width:420px;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
+.products {
+  width: 100%;
+  max-width: 420px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 /* PRODUCT */
-.product{
-  height:190px;
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  cursor:pointer;
+.product {
+  height: 190px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
 }
 
 /* CARD */
-.product-card{
-  flex:1;
-  border-radius:22px;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
+.product-card {
+  flex: 1;
+  border-radius: 22px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   box-shadow:
     0 0 0 2px var(--green),
     0 0 0 4px var(--red);
 }
-.product-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* NAME */
-.name{
-  height:36px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 6px;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--green),var(--white),var(--red));
-  color:#000;
-  font-weight:900;
-  text-align:center;
-  font-size:clamp(9px, 3.5vw, 12px);
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
+.name {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--green), var(--white), var(--red));
+  color: #000;
+  font-weight: 900;
+  text-align: center;
+  font-size: clamp(9px, 3.5vw, 12px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* MODAL */
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.95);
-  display:none;
-  flex-direction:column;
-  z-index:2000;
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .95);
+  display: none;
+  flex-direction: column;
+  z-index: 2000;
 }
 
-/* MEDIA BOX */
-.media-box{
-  width:100%;
-  max-width:420px;
-  margin:20px auto 0;
-  position:relative;
+/* MEDIA */
+.media-box {
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto 0;
+  position: relative;
 }
+
 .media-box video,
-.media-box img{
-  width:100%;
-  max-height:50vh;
-  object-fit:contain;
+.media-box img {
+  width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
+}
+
+.media-box video {
+  pointer-events: none;
 }
 
 /* ARROWS */
-.nav{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:56px;
-  height:56px;
-  background:#000;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:32px;
-  font-weight:900;
-  cursor:pointer;
-  user-select:none;
-  color:#fff;
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 900;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
   box-shadow:
     0 0 0 2px var(--green),
     0 0 8px var(--green);
+  z-index: 3000;
 }
-.nav.left{left:10px}
-.nav.right{right:10px}
+
+.nav.left { left: 10px; }
+.nav.right { right: 10px; }
 
 /* PRICES */
-.prices{
-  width:100%;
-  max-width:420px;
-  margin:16px auto 0;
-  padding:16px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:10px;
+.prices {
+  width: 100%;
+  max-width: 420px;
+  margin: 16px auto 0;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  max-height: 30vh;
+  overflow-y: auto;
 }
-.price{
-  background:#050505;
-  border-radius:14px;
-  padding:12px;
-  text-align:center;
-  font-weight:800;
+
+.price {
+  background: #050505;
+  border-radius: 14px;
+  padding: 12px;
+  text-align: center;
+  font-weight: 800;
   box-shadow:
     0 0 0 1px var(--green),
     0 0 0 2px var(--red);
 }
 
-/* CTA */
-.contact{
-  width:100%;
-  max-width:420px;
-  margin:16px auto 20px;
-  padding:16px;
-  background:linear-gradient(135deg,var(--green),var(--white),var(--red));
-  color:#000;
-  border-radius:18px;
-  font-weight:900;
-  text-align:center;
-  cursor:pointer;
+/* CONTACT */
+.contact {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--green), var(--white), var(--red));
+  color: #000;
+  border-radius: 18px 18px 0 0;
+  font-weight: 900;
+  text-align: center;
+  cursor: pointer;
+  z-index: 4000;
 }
 </style>
 </head>
 
 <body>
-
 <div class="back" id="backBtn">←</div>
 
 <div class="app">
@@ -216,8 +233,8 @@ const CONTACT = "Italianfarm1";
 let products = [];
 let product = null;
 let mediaIndex = 0;
+let currentVideo = null;
 
-/* LOAD PRODUCTS */
 fetch("products.json?v=" + Date.now())
 .then(r => r.json())
 .then(j => {
@@ -225,7 +242,6 @@ fetch("products.json?v=" + Date.now())
   render();
 });
 
-/* RENDER GRID */
 function render(){
   const box = document.getElementById("products");
   box.innerHTML = "";
@@ -233,14 +249,13 @@ function render(){
     const d = document.createElement("div");
     d.className = "product";
     d.innerHTML =
-      '<div class="product-card"><img src="'+p.previewImage+'"></div>' +
-      '<div class="name">'+p.name+'</div>';
+      '<div class="product-card"><img loading="lazy" src="' + p.previewImage + '"></div>' +
+      '<div class="name">' + p.name + '</div>';
     d.onclick = () => openModal(p);
     box.appendChild(d);
   });
 }
 
-/* OPEN MODAL */
 function openModal(p){
   product = p;
   mediaIndex = 0;
@@ -250,11 +265,29 @@ function openModal(p){
   tg.BackButton.show();
 }
 
-/* LOAD MEDIA */
+function stopCurrentVideo(){
+  if(currentVideo){
+    currentVideo.pause();
+    currentVideo.currentTime = 0;
+    currentVideo = null;
+  }
+}
+
+function preloadNext(){
+  if(!product || !product.media) return;
+  const nextIndex = (mediaIndex + 1) % product.media.length;
+  const next = product.media[nextIndex];
+  if(next.type === "image"){
+    const img = new Image();
+    img.src = next.src;
+  }
+}
+
 function loadMedia(){
+  stopCurrentVideo();
   const box = document.getElementById("mediaContainer");
   box.innerHTML = "";
-  if(!product.media || product.media.length === 0) return;
+  if(!product.media) return;
 
   const m = product.media[mediaIndex];
 
@@ -264,32 +297,31 @@ function loadMedia(){
     v.controls = true;
     v.playsInline = true;
     box.appendChild(v);
+    currentVideo = v;
     v.play().catch(()=>{});
-  } else if(m.type === "image"){
+  } else {
     const img = document.createElement("img");
     img.src = m.src;
+    img.loading = "lazy";
     box.appendChild(img);
   }
+
+  preloadNext();
 }
 
-/* NAV */
 document.getElementById("next").onclick = () => {
-  if(!product || !product.media) return;
   mediaIndex = (mediaIndex + 1) % product.media.length;
   loadMedia();
 };
 
 document.getElementById("prev").onclick = () => {
-  if(!product || !product.media) return;
   mediaIndex = (mediaIndex - 1 + product.media.length) % product.media.length;
   loadMedia();
 };
 
-/* PRICES */
 function loadPrices(){
   const box = document.getElementById("prices");
   box.innerHTML = "";
-  if(!product.prices) return;
   product.prices.forEach(p => {
     const d = document.createElement("div");
     d.className = "price";
@@ -298,38 +330,30 @@ function loadPrices(){
   });
 }
 
-/* CONTACT */
 document.getElementById("contactBtn").onclick = () => {
-  if(!product) return;
   const msg = encodeURIComponent("Ciao, sono interessato al prodotto: " + product.name);
   window.open("https://t.me/" + CONTACT + "?text=" + msg, "_blank");
 };
 
-/* CLOSE MODAL */
 function closeModal(){
+  stopCurrentVideo();
   document.getElementById("modal").style.display = "none";
   document.getElementById("mediaContainer").innerHTML = "";
   tg.BackButton.hide();
 }
 
-/* BACK */
 document.getElementById("backBtn").onclick = () => {
-  if(document.getElementById("modal").style.display === "flex"){
-    closeModal();
-  } else {
-    location.href = "catalog.html";
-  }
+  document.getElementById("modal").style.display === "flex"
+    ? closeModal()
+    : location.href = "catalog.html";
 };
 
 tg.BackButton.onClick(() => {
-  if(document.getElementById("modal").style.display === "flex"){
-    closeModal();
-  } else {
-    location.href = "catalog.html";
-  }
+  document.getElementById("modal").style.display === "flex"
+    ? closeModal()
+    : location.href = "catalog.html";
 });
 </script>
-
 </body>
 </html>
 
