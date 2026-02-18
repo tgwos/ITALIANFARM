@@ -1,14 +1,19 @@
+
 [
-  {
-    "id": 1,
-    "name": "PREMIUM PATRON",
-    "category": "stock1",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771326045/1.2_odqs7n.png",
-    "videos": [
-      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771325860/1_nuloyi.mp4",
-      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771325833/1.1_k9ktwh.mp4"
-    ],
-    "prices": [
+{
+  "id": 1,
+  "name": "PREMIUM PATRON",
+  "category": "stock1",
+  "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771326045/1.2_odqs7n.png",
+
+  "media": [
+    { "type": "image", "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771326045/1.2_odqs7n.png" },
+    { "type": "video", "src": "https://res.cloudinary.com/dizbl4jib/video/upload/v1771325860/1_nuloyi.mp4" },
+    { "type": "video", "src": "https://res.cloudinary.com/dizbl4jib/video/upload/v1771325833/1.1_k9ktwh.mp4" }
+    
+  ],
+
+  "prices": [
       { "quantity": 2, "price": 40 },
       { "quantity": 5, "price": 80 },
       { "quantity": 10, "price": 140 },
@@ -16,7 +21,7 @@
       { "quantity": 50, "price": 500 },
       { "quantity": 100, "price": 950 }
     ]
-  },
+}
   {
     "id": 2,
     "name": "PLASMA STATIC",
@@ -53,23 +58,28 @@
       { "quantity": 100, "price": 1350 }
     ]
   },
-  {
-    "id": 4,
-    "name": "DRY VARIE FARM",
-    "category": "stock2",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771331515/2.2_jdxubz.png",
-    "videos": [
-      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771331407/2_cbucpa.mp4",
-      "https://res.cloudinary.com/dizbl4jib/video/upload/v1771331511/2.1_vtumpl.mp4"
-    ],
-    "prices": [
-      { "quantity": 2, "price": 50 },
-      { "quantity": 5, "price": 100 },
-      { "quantity": 10, "price": 190 },
-      { "quantity": 25, "price": 400 },
-      { "quantity": 50, "price": 750 },
-      { "quantity": 100, "price": 1450 }
+ {
+  "id": 4,
+  "name": "DRY VARIE FARM",
+  "category": "stock2",
+  "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771419394/4_opsaax.jpg",
+
+  "media": [
+    { "type": "image", "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771419436/4.2_bnqhlz.jpg" },
+    { "type": "image", "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771419394/4_opsaax.jpg" },
+    { "type": "video", "src": "https://res.cloudinary.com/dizbl4jib/video/upload/v1771419433/4.1_s8uco3.mp4" }
+    
+  ],
+
+  "prices": [
+      { "quantity": 5, "price": 30 },
+      { "quantity": 10, "price": 50 },
+      { "quantity": 15, "price": 70 },
+      { "quantity": 25, "price": 100 },
+      { "quantity": 100, "price": 350 },
+      { "quantity": 500, "price": 1400 },
+      { "quantity": 1000, "price": 2700 },
     ]
-  }
+}
   
 ]
