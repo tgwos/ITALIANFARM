@@ -203,6 +203,8 @@ body {
   z-index: 4000;
 }
  /* COLLAPSABLE DESCRIPTION */
+/* COLLAPSABLE DESCRIPTION - MOBILE STABLE */
+
 .description {
   width: 100%;
   max-width: 420px;
@@ -225,18 +227,20 @@ body {
 }
 
 .description-content {
-  height: 0;
-  overflow: hidden;
-  padding: 0 14px;
+  display: none;
+  max-height: 180px;       /* altezza visibile */
+  overflow-y: auto;        /* SCORRIMENTO */
+  padding: 0 14px 14px 14px;
   font-size: 14px;
   line-height: 1.5;
-  transition:
-    height .45s cubic-bezier(0.22, 1, 0.36, 1),
-    padding .35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.description.expanded .description-content {
+  display: block;
 }
 
 .arrow {
-  transition: transform .4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform .3s ease;
 }
 
 .description.expanded .arrow {
@@ -309,20 +313,19 @@ function openModal(p){
   product = p;
   mediaIndex = 0;
 
+  // Mostra modal
   document.getElementById("modal").style.display = "flex";
 
+  // Carica contenuti
   loadMedia();
   loadDescription();
   loadPrices();
 
-  // reset descrizione in modo sicuro
+  // Chiude sempre la descrizione quando apri un prodotto
   const descBox = document.getElementById("descriptionBox");
-  const descContent = document.getElementById("description");
-
   descBox.classList.remove("expanded");
-  descContent.style.height = "0px";
-  descContent.style.padding = "0 14px";
 
+  // Mostra back Telegram
   tg.BackButton.show();
 }
 
@@ -417,27 +420,11 @@ tg.BackButton.onClick(() => {
     ? closeModal()
     : location.href = "catalog.html";
 });
-  const toggle = document.getElementById("descriptionToggle");
-const descBox = document.getElementById("descriptionBox");
-const descContent = document.getElementById("description");
+ 
 
-toggle.onclick = () => {
-  const isOpen = descBox.classList.contains("expanded");
-
-  if (isOpen) {
-    descContent.style.height = descContent.scrollHeight + "px";
-
-    requestAnimationFrame(() => {
-      descContent.style.height = "0px";
-      descContent.style.padding = "0 14px";
-    });
-
-    descBox.classList.remove("expanded");
-  } else {
-    descBox.classList.add("expanded");
-    descContent.style.height = descContent.scrollHeight + "px";
-    descContent.style.padding = "14px";
-  }
+document.getElementById("descriptionToggle").onclick = () => {
+  const box = document.getElementById("descriptionBox");
+  box.classList.toggle("expanded");
 };
 </script>
 </body>
