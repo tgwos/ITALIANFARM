@@ -261,7 +261,7 @@ body {
 
   <div class="description collapsed" id="descriptionBox">
     <div class="description-header" id="descriptionToggle">
-      📄 DESCRIZIONE
+       DESCRIZIONE
       <span class="arrow">▼</span>
     </div>
     <div class="description-content" id="description"></div>
@@ -314,6 +314,10 @@ function openModal(p){
   loadMedia();
   loadDescription();
   loadPrices();
+
+  // reset descrizione in modo sicuro
+  const descBox = document.getElementById("descriptionBox");
+  const descContent = document.getElementById("description");
 
   descBox.classList.remove("expanded");
   descContent.style.height = "0px";
