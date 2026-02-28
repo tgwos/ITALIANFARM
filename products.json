@@ -5,6 +5,7 @@
     "name": "PREMIUM PATRON",
     "category": "stock1",
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425738/5814528362167340381_r5edwj.jpg",
+    "description": "Questa è la descrizione del prodotto. Aroma intenso, qualità premium...",
     "media": [
       {
         "type": "image",
@@ -38,6 +39,7 @@
     "name": "PLASMA STATIC",
     "category": "stock1",
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425421/5814528362167340382_uffzol.jpg",
+    "description": "Questa è la descrizione del prodotto. Aroma intenso, qualità premium...",
     "media": [
       {
         "type": "image",
@@ -71,6 +73,7 @@
     "name": "FROZEN PREMIUM",
     "category": "stock1",
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771332084/3.2_ntmqri.png",
+    "description": "Questa è la descrizione del prodotto. Aroma intenso, qualità premium...",
     "media": [
       {
         "type": "image",
@@ -100,6 +103,7 @@
     "name": "DRY VARIE FARM",
     "category": "stock2",
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771419394/4_opsaax.jpg",
+    "description": "Questa è la descrizione del prodotto. Aroma intenso, qualità premium...",
     "media": [
       {
         "type": "image",
@@ -129,6 +133,7 @@
     "name": "TUSSI B",
     "category": "stock5",
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771421687/Cattura_yfup8j.png",
+     "description": "Questa è la descrizione del prodotto. Aroma intenso, qualità premium...",
     "media": [
       {
         "type": "image",
@@ -154,6 +159,7 @@
     "name": " KARLL",
     "category": "stock4",
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771422097/6.1_eizc1s.jpg",
+     "description": "Questa è la descrizione del prodotto. Aroma intenso, qualità premium...",
     "media": [
       {
         "type": "image",
@@ -187,6 +193,7 @@
     "name": "STATIC MOUNTAIN TERPS",
     "category": "stock3",
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771423943/7_ww46kc.jpg",
+     "description": "Questa è la descrizione del prodotto. Aroma intenso, qualità premium...",
     "media": [
      
       {
@@ -208,6 +215,7 @@
     "name": "MIX SELECTION",
     "category": "stock6",
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425738/5814528362167340381_r5edwj.jpg",
+    "description": "Questa è la descrizione del prodotto. Aroma intenso, qualità premium...",
     "media": [
       {
         "type": "image",
