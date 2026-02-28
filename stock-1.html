@@ -162,6 +162,23 @@ body {
 .nav.left { left: 10px; }
 .nav.right { right: 10px; }
 
+/* DESCRIPTION SIMPLE AUTO HEIGHT */
+
+.description {
+  width: 100%;
+  max-width: 420px;
+  margin: 16px auto 0;
+  padding: 16px;
+  border-radius: 14px;
+  background: #050505;
+  font-size: 14px;
+  line-height: 1.6;
+  word-break: break-word;
+  box-shadow:
+    0 0 0 1px var(--green),
+    0 0 0 2px var(--red);
+}
+
 /* PRICES */
 .prices {
   width: 100%;
@@ -202,50 +219,6 @@ body {
   cursor: pointer;
   z-index: 4000;
 }
- /* COLLAPSABLE DESCRIPTION */
-/* COLLAPSABLE DESCRIPTION - MOBILE STABLE */
-
-.description {
-  width: 100%;
-  max-width: 420px;
-  margin: 16px auto 0;
-  border-radius: 14px;
-  background: #050505;
-  overflow: hidden;
-  box-shadow:
-    0 0 0 1px var(--green),
-    0 0 0 2px var(--red);
-}
-
-.description-header {
-  padding: 14px;
-  font-weight: 900;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.description-content {
-  display: none;
-  max-height: 180px;       /* altezza visibile */
-  overflow-y: auto;        /* SCORRIMENTO */
-  padding: 0 14px 14px 14px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.description.expanded .description-content {
-  display: block;
-}
-
-.arrow {
-  transition: transform .3s ease;
-}
-
-.description.expanded .arrow {
-  transform: rotate(180deg);
-}
 </style>
 </head>
 
@@ -263,13 +236,7 @@ body {
     <div id="mediaContainer"></div>
   </div>
 
-  <div class="description collapsed" id="descriptionBox">
-    <div class="description-header" id="descriptionToggle">
-       DESCRIZIONE
-      <span class="arrow">▼</span>
-    </div>
-    <div class="description-content" id="description"></div>
-  </div>
+  <div class="description" id="description"></div>
 
   <div class="prices" id="prices"></div>
   <div class="contact" id="contactBtn">💬 CONTATTA</div>
@@ -313,19 +280,12 @@ function openModal(p){
   product = p;
   mediaIndex = 0;
 
-  // Mostra modal
   document.getElementById("modal").style.display = "flex";
 
-  // Carica contenuti
   loadMedia();
   loadDescription();
   loadPrices();
 
-  // Chiude sempre la descrizione quando apri un prodotto
-  const descBox = document.getElementById("descriptionBox");
-  descBox.classList.remove("expanded");
-
-  // Mostra back Telegram
   tg.BackButton.show();
 }
 
@@ -393,10 +353,12 @@ function loadPrices(){
     box.appendChild(d);
   });
 }
+
 function loadDescription(){
   const box = document.getElementById("description");
   box.innerHTML = product.description || "";
 }
+
 document.getElementById("contactBtn").onclick = () => {
   const msg = encodeURIComponent("Ciao, sono interessato al prodotto: " + product.name);
   window.open("https://t.me/" + CONTACT + "?text=" + msg, "_blank");
@@ -420,12 +382,6 @@ tg.BackButton.onClick(() => {
     ? closeModal()
     : location.href = "catalog.html";
 });
- 
-
-document.getElementById("descriptionToggle").onclick = () => {
-  const box = document.getElementById("descriptionBox");
-  box.classList.toggle("expanded");
-};
 </script>
 </body>
 </html>
