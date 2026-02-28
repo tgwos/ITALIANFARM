@@ -213,7 +213,6 @@ body {
   box-shadow:
     0 0 0 1px var(--green),
     0 0 0 2px var(--red);
-  transition: all .3s ease;
 }
 
 .description-header {
@@ -226,21 +225,18 @@ body {
 }
 
 .description-content {
-  max-height: 0;
+  height: 0;
   overflow: hidden;
   padding: 0 14px;
   font-size: 14px;
-  line-height: 1.4;
-  transition: max-height .4s ease, padding .3s ease;
-}
-
-.description.expanded .description-content {
-  max-height: 300px;
-  padding: 14px;
+  line-height: 1.5;
+  transition:
+    height .45s cubic-bezier(0.22, 1, 0.36, 1),
+    padding .35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .arrow {
-  transition: transform .3s ease;
+  transition: transform .4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .description.expanded .arrow {
@@ -319,9 +315,9 @@ function openModal(p){
   loadDescription();
   loadPrices();
 
-  // 👇 reset descrizione (importante)
-  const box = document.getElementById("descriptionBox");
-  box.classList.remove("expanded");
+  descBox.classList.remove("expanded");
+  descContent.style.height = "0px";
+  descContent.style.padding = "0 14px";
 
   tg.BackButton.show();
 }
@@ -417,9 +413,27 @@ tg.BackButton.onClick(() => {
     ? closeModal()
     : location.href = "catalog.html";
 });
-  document.getElementById("descriptionToggle").onclick = () => {
-  const box = document.getElementById("descriptionBox");
-  box.classList.toggle("expanded");
+  const toggle = document.getElementById("descriptionToggle");
+const descBox = document.getElementById("descriptionBox");
+const descContent = document.getElementById("description");
+
+toggle.onclick = () => {
+  const isOpen = descBox.classList.contains("expanded");
+
+  if (isOpen) {
+    descContent.style.height = descContent.scrollHeight + "px";
+
+    requestAnimationFrame(() => {
+      descContent.style.height = "0px";
+      descContent.style.padding = "0 14px";
+    });
+
+    descBox.classList.remove("expanded");
+  } else {
+    descBox.classList.add("expanded");
+    descContent.style.height = descContent.scrollHeight + "px";
+    descContent.style.padding = "14px";
+  }
 };
 </script>
 </body>
