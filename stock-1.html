@@ -202,19 +202,49 @@ body {
   cursor: pointer;
   z-index: 4000;
 }
-  /* DESCRIPTION */
+ /* COLLAPSABLE DESCRIPTION */
 .description {
   width: 100%;
   max-width: 420px;
   margin: 16px auto 0;
-  padding: 14px;
   border-radius: 14px;
   background: #050505;
-  font-size: 14px;
-  line-height: 1.4;
+  overflow: hidden;
   box-shadow:
     0 0 0 1px var(--green),
     0 0 0 2px var(--red);
+  transition: all .3s ease;
+}
+
+.description-header {
+  padding: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 14px;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: max-height .4s ease, padding .3s ease;
+}
+
+.description.expanded .description-content {
+  max-height: 300px;
+  padding: 14px;
+}
+
+.arrow {
+  transition: transform .3s ease;
+}
+
+.description.expanded .arrow {
+  transform: rotate(180deg);
 }
 </style>
 </head>
@@ -232,7 +262,15 @@ body {
     <div class="nav right" id="next">›</div>
     <div id="mediaContainer"></div>
   </div>
-  <div class="description" id="description"></div>
+
+  <div class="description collapsed" id="descriptionBox">
+    <div class="description-header" id="descriptionToggle">
+      📄 DESCRIZIONE
+      <span class="arrow">▼</span>
+    </div>
+    <div class="description-content" id="description"></div>
+  </div>
+
   <div class="prices" id="prices"></div>
   <div class="contact" id="contactBtn">💬 CONTATTA</div>
 </div>
@@ -274,10 +312,17 @@ function render(){
 function openModal(p){
   product = p;
   mediaIndex = 0;
+
   document.getElementById("modal").style.display = "flex";
+
   loadMedia();
   loadDescription();
   loadPrices();
+
+  // 👇 reset descrizione (importante)
+  const box = document.getElementById("descriptionBox");
+  box.classList.remove("expanded");
+
   tg.BackButton.show();
 }
 
@@ -372,6 +417,10 @@ tg.BackButton.onClick(() => {
     ? closeModal()
     : location.href = "catalog.html";
 });
+  document.getElementById("descriptionToggle").onclick = () => {
+  const box = document.getElementById("descriptionBox");
+  box.classList.toggle("expanded");
+};
 </script>
 </body>
 </html>
