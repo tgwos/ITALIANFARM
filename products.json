@@ -46,10 +46,6 @@
         "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425421/5814528362167340382_uffzol.jpg"
       },
       {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771331515/2.2_jdxubz.png"
-      },
-      {
         "type": "video",
         "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4270%20-%20Trim.mp4"
       },
@@ -85,7 +81,7 @@
       },
       {
         "type": "video",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4420%20-%20Trim.mp44"
+        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4420.MP4"
       }
     ],
     "prices": [
@@ -135,10 +131,7 @@
     "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771421687/Cattura_yfup8j.png",
      "description": "...",
     "media": [
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771421687/Cattura_yfup8j.png"
-      },
+      
       {
         "type": "video",
         "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_3081.MP4"
