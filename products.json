@@ -124,7 +124,7 @@
     "id": 5,
     "name": "TUSSI B",
     "category": "stock5",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771421687/Cattura_yfup8j.png",
+    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura.PNG",
      "description": "...",
     "media": [
       
@@ -147,17 +147,9 @@
     "id": 6,
     "name": " KARLL",
     "category": "stock4",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771422097/6.1_eizc1s.jpg",
+    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura.PNG",
      "description": "...",
     "media": [
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771422097/6.1_eizc1s.jpg"
-      },
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771422138/6_iirkx4.jpg"
-      },
       {
         "type": "video",
         "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4084.MP4"
@@ -181,14 +173,9 @@
     "id": 7,
     "name": "STATIC MOUNTAIN TERPS",
     "category": "stock3",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771423943/7_ww46kc.jpg",
+    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura.PNG",
      "description": "...",
-    "media": [
-     
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771423943/7_ww46kc.jpg"
-      }, 
+    "media": [ 
       {
         "type": "video",
         "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4176%20-%20Trim.mp4?updatedAt=1773062457486"
