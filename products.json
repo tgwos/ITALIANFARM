@@ -4,16 +4,12 @@
     "id": 1,
     "name": "PREMIUM PATRON",
     "category": "stock1",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425738/5814528362167340381_r5edwj.jpg",
+    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612749.jpg",
     "description": "...",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425696/5814528362167340380_1_uyq3jo.jpg"
-      },
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425696/5814528362167340380_1_uyq3jo.jpg"
+        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612749.jpg"
       },
       {
         "type": "video",
@@ -38,12 +34,12 @@
     "id": 2,
     "name": "PLASMA STATIC",
     "category": "stock1",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425421/5814528362167340382_uffzol.jpg",
+    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612750.jpg",
     "description": "...",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425421/5814528362167340382_uffzol.jpg"
+        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612750.jpg"
       },
       {
         "type": "video",
@@ -68,12 +64,12 @@
     "id": 3,
     "name": "FROZEN PREMIUM",
     "category": "stock1",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771332084/3.2_ntmqri.png",
+    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612750.jpg",
     "description": "...",
     "media": [
       {
         "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771425539/5814528362167340383_1_henqew.jpg"
+        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612750.jpg"
       },
       {
         "type": "video",
