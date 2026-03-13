@@ -73,11 +73,11 @@
       },
       {
         "type": "video",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4405%20-%20Trim.mp4"
+        "src": "https://videodelivery.net/af7c56f5c639e604ac322070e7799f50/manifest/video.m3u8"
       },
       {
         "type": "video",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4420.MP4"
+        "src": "https://videodelivery.net/20e151cf0361a2081b93e4510fdde51c/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -94,27 +94,19 @@
     "id": 4,
     "name": "DRY VARIE FARM",
     "category": "stock2",
-    "previewImage": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771419394/4_opsaax.jpg",
+    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura.PNG",
     "description": "...",
     "media": [
       {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771419436/4.2_bnqhlz.jpg"
-      },
-      {
-        "type": "image",
-        "src": "https://res.cloudinary.com/dizbl4jib/image/upload/v1771419394/4_opsaax.jpg"
-      },
-      {
         "type": "video",
-        "src": "https://res.cloudinary.com/dizbl4jib/video/upload/v1771419433/4.1_s8uco3.mp4"
+        "src": "https://videodelivery.net/e47a6d3727736f1fcabfc11630836e50/manifest/video.m3u8"
       }
     ],
     "prices": [
       { "quantity": 5, "price": 30 },
-      { "quantity": 10, "price": 50 },
-      { "quantity": 15, "price": 70 },
-      { "quantity": 25, "price": 100 },
+      { "quantity": 10, "price": 60 },
+      { "quantity": 15, "price": 80 },
+      { "quantity": 25, "price": 120 },
       { "quantity": 100, "price": 350 },
       { "quantity": 500, "price": 1400 },
       { "quantity": 1000, "price": 2700 }
@@ -130,7 +122,7 @@
       
       {
         "type": "video",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_3081.MP4"
+        "src": "https://videodelivery.net/9c47b1a93b332ecc7d83ab288e30770c/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -152,11 +144,11 @@
     "media": [
       {
         "type": "video",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4084.MP4"
+        "src": "https://videodelivery.net/fc3364fec5c00af4cdaaa6fc01a295d6/manifest/video.m3u8"
       },
       {
         "type": "video",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4085.MP4"
+        "src": "https://videodelivery.net/66fabcda03bd797e7c75d12480e017e6/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -178,7 +170,7 @@
     "media": [ 
       {
         "type": "video",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/IMG_4176%20-%20Trim.mp4?updatedAt=1773062457486"
+        "src": "https://videodelivery.net/1dc819cc4e7edb2cd24b12902f228ef1/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -222,7 +214,7 @@
        
       {
         "type": "video",
-        "src": "https://res.cloudinary.com/dbyvkhuds/video/upload/v1772889178/IMG_4408_sisvpz.mp4"
+        "src": "https://videodelivery.net/2a55914901b92b6b465d39cb810d8b81/manifest/video.m3u"
       }
     ],
     "prices": [
