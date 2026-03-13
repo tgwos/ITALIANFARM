@@ -100,6 +100,14 @@
       {
         "type": "video",
         "src": "https://videodelivery.net/e47a6d3727736f1fcabfc11630836e50/manifest/video.m3u8"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/4a3deb6306cb1849f54a07e8998ba9da/manifest/video.m3u8"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/b47eed90cfcc294d766623f9799982e2/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -107,6 +115,7 @@
       { "quantity": 10, "price": 60 },
       { "quantity": 15, "price": 80 },
       { "quantity": 25, "price": 120 },
+      { "quantity": 50, "price": 180 },
       { "quantity": 100, "price": 350 },
       { "quantity": 500, "price": 1400 },
       { "quantity": 1000, "price": 2700 }
