@@ -166,8 +166,8 @@
       { "quantity": 3, "price": 120 },
       { "quantity": 5, "price": 170 },
       { "quantity": 10, "price": 300 },
-      { "quantity": 50, "price": 1250 },
-      { "quantity": 100, "price": 2200 }
+      { "quantity": 50, "price": 1350 },
+      { "quantity": 100, "price": 2350 }
     ]
   },
    {
