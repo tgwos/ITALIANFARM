@@ -146,18 +146,14 @@
   },
    {
     "id": 6,
-    "name": " KARLL",
+    "name": " QUALITÀ A+",
     "category": "stock4",
     "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura1.PNG",
      "description": "...",
     "media": [
       {
         "type": "video",
-        "src": "https://videodelivery.net/fc3364fec5c00af4cdaaa6fc01a295d6/manifest/video.m3u8"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/66fabcda03bd797e7c75d12480e017e6/manifest/video.m3u8"
+        "src": "https://videodelivery.net/cfecfb47fce83dab74596105c7b1d8a3/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -168,6 +164,28 @@
       { "quantity": 10, "price": 300 },
       { "quantity": 50, "price": 1350 },
       { "quantity": 100, "price": 2350 }
+    ]
+  },
+  {
+    "id": 7,
+    "name": " QUALITÀ A",
+    "category": "stock4",
+    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura1.PNG",
+     "description": "...",
+    "media": [
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/41d8e7bcb56df10407216d1bb0b2ecce/manifest/video.m3u8"
+      }
+    ],
+    "prices": [
+      { "quantity": 1, "price": 40 },
+      { "quantity": 2, "price": 80 },
+      { "quantity": 3, "price": 100 },
+      { "quantity": 5, "price": 150 },
+      { "quantity": 10, "price": 280 },
+      { "quantity": 50, "price": 1300 },
+      { "quantity": 100, "price": 2250 }
     ]
   },
    {
