@@ -205,7 +205,6 @@
       }
     ],
     "prices": [
-      { "quantity": 50, "price": 380 },
       { "quantity": 100, "price": 700 }
     ]
   },
@@ -237,20 +236,30 @@
   },
   {
     "id": 9,
-    "name": "MOUNTAIN GIANTS",
+    "name": "STATIC PAPAYABERRY",
     "category": "stock1",
-    "previewImage": "https://res.cloudinary.com/dbyvkhuds/image/upload/v1772889259/Cattura_brlfud.png",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/c258a33e-ad7a-4374-3f4f-f06370386200/public"",
     "description": "...",
     "media": [
-       
+      {
+        "type": "image",
+        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/c258a33e-ad7a-4374-3f4f-f06370386200/public"
+      },
+      {
+        "type": "image",
+        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/53eaa716-1486-43fd-03f8-e9d987c54b00/public"
+      },
       {
         "type": "video",
-        "src": "https://videodelivery.net/2a55914901b92b6b465d39cb810d8b81/manifest/video.m3u"
+        "src": "https://videodelivery.net/b554111811a23b02b412c5d8b6ffbfef/manifest/video.m3u"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/51df83bba1975618d37222e9d8129f5e/manifest/video.m3u"
       }
     ],
     "prices": [
-      { "quantity": 50, "price": 400 },
-      { "quantity": 100, "price": 700 }
+      { "quantity": 100, "price": 800 }
     ]
   }
   
