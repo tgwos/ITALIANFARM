@@ -251,11 +251,11 @@
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/b554111811a23b02b412c5d8b6ffbfef/manifest/video.m3u"
-      },
+        "src": "https://videodelivery.net/b554111811a23b02b412c5d8b6ffbfef/manifest/video.m3u8"
+      },       
       {
         "type": "video",
-        "src": "https://videodelivery.net/51df83bba1975618d37222e9d8129f5e/manifest/video.m3u"
+        "src": "https://videodelivery.net/51df83bba1975618d37222e9d8129f5e/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -275,11 +275,11 @@
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/de38bf8860d7fc1807cf2e6ada35e9a3/manifest/video.m3u"
+        "src": "https://videodelivery.net/de38bf8860d7fc1807cf2e6ada35e9a3/manifest/video.m3u8"
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/3c719871faf67df5547b25b584bf56cc/manifest/video.m3u"
+        "src": "https://videodelivery.net/3c719871faf67df5547b25b584bf56cc/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -299,11 +299,11 @@
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/65c0580f591bd1d89b05c432dbf044e7/manifest/video.m3u"
+        "src": "https://videodelivery.net/65c0580f591bd1d89b05c432dbf044e7/manifest/video.m3u8"
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/79e622ee55129fa84150497af7560dad/manifest/video.m3u"
+        "src": "https://videodelivery.net/79e622ee55129fa84150497af7560dad/manifest/video.m3u8"
       }
     ],
     "prices": [
