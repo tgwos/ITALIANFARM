@@ -238,7 +238,7 @@
     "id": 9,
     "name": "STATIC PAPAYABERRY",
     "category": "stock1",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/c258a33e-ad7a-4374-3f4f-f06370386200/public"",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/c258a33e-ad7a-4374-3f4f-f06370386200/public",
     "description": "...",
     "media": [
       {
@@ -261,6 +261,53 @@
     "prices": [
       { "quantity": 100, "price": 800 }
     ]
+  },
+  {
+    "id": 9,
+    "name": "WEED",
+    "category": "stock3",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/2569a440-62e7-4be0-7269-5169f9099300/public",
+    "description": "...",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/2569a440-62e7-4be0-7269-5169f9099300/public"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/de38bf8860d7fc1807cf2e6ada35e9a3/manifest/video.m3u"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/3c719871faf67df5547b25b584bf56cc/manifest/video.m3u"
+      }
+    ],
+    "prices": [
+      { "quantity": 100, "price": 650 }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "SUPER STATIC",
+    "category": "stock1",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/db476707-5669-4f36-2474-235d12ec1400/public",
+    "description": "...",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/db476707-5669-4f36-2474-235d12ec1400/public"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/65c0580f591bd1d89b05c432dbf044e7/manifest/video.m3u"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/79e622ee55129fa84150497af7560dad/manifest/video.m3u"
+      }
+    ],
+    "prices": [
+      { "quantity": 100, "price": 850 }
+    ]
   }
-  
 ]
