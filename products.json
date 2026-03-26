@@ -190,14 +190,18 @@
   },
    {
     "id": 7,
-    "name": "STATIC MOUNTAIN TERPS",
+    "name": "FROZEN SIFT",
     "category": "stock1",
-    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura.PNG?updatedAt=1773077758498",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a28c8a01-9d59-49c0-3a79-378c48537900/public",
      "description": "...",
     "media": [ 
       {
+        "type": "image",
+        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a28c8a01-9d59-49c0-3a79-378c48537900/public"
+      },
+      {
         "type": "video",
-        "src": "https://videodelivery.net/1dc819cc4e7edb2cd24b12902f228ef1/manifest/video.m3u8"
+        "src": "https://videodelivery.net/cad53a9f4b20f6a92afda49d2377bb36/manifest/video.m3u8"
       }
     ],
     "prices": [
