@@ -3,7 +3,7 @@
   {
     "id": 1,
     "name": "PREMIUM PATRON",
-    "category": "stock1",
+    "category": "stock",
     "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612749.jpg",
     "description": "...",
     "media": [
@@ -63,7 +63,7 @@
   {
     "id": 3,
     "name": "FROZEN PREMIUM",
-    "category": "stock1",
+    "category": "stock",
     "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura.PNG",
     "description": "...",
     "media": [
