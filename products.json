@@ -13,7 +13,11 @@
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/dc1c4dbeb7d9c6f3b6f23845f7beacf1/manifest/video.m3u8"
+        "src": "https://videodelivery.net/399ef4b3f142e1ef151e06aa57f211d7/manifest/video.m3u8"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/a86c38aa89a365a725b4743ee198ce47/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -28,31 +32,26 @@
 
   {
     "id": 2,
-    "name": "PLASMA STATIC",
-    "category": "stock",
-    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612750.jpg",
+    "name": "STATIC PREMIUM",
+    "category": "stock1",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/66aa3cc6-8218-4557-82d5-415f7a3ee200/public",
     "description": "...",
     "media": [
       {
         "type": "image",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612750.jpg"
+        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/66aa3cc6-8218-4557-82d5-415f7a3ee200/public"
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/2680ee6b54f7534bca29a29b7e02c031/manifest/video.m3u8"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/acb0c789d5110e68b9dd87349acbd529/manifest/video.m3u8"
+        "src": "https://videodelivery.net/5fb3d6dec7dad838f748ed67a0ca6381/manifest/video.m3u8"
       }
     ],
     "prices": [
-      { "quantity": 2, "price": 50 },
-      { "quantity": 5, "price": 100 },
-      { "quantity": 10, "price": 190 },
-      { "quantity": 25, "price": 400 },
-      { "quantity": 50, "price": 750 },
-      { "quantity": 100, "price": 1450 }
+      { "quantity": 5, "price": 80 },
+      { "quantity": 10, "price": 150 },
+      { "quantity": 25, "price": 270 },
+      { "quantity": 50, "price": 450 },
+      { "quantity": 100, "price": 850 }
     ]
   },
 
