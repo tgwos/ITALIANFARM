@@ -2,38 +2,34 @@
 [
   {
     "id": 1,
-    "name": "PREMIUM PATRON",
-    "category": "stock",
-    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612749.jpg",
+    "name": "STATIC SIFT TROPICAL",
+    "category": "stock1",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/cc5096f6-f093-48f7-4029-f6e71e4d3300/public",
     "description": "...",
     "media": [
       {
         "type": "image",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612749.jpg"
+        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/290f14e0-bec5-47c0-3818-da9af2f68b00/public"
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/deff129f3dfdb67c61439d91c90bcaa1/manifest/video.m3u8"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/527de1681e3be4182a907b55a12a6dbc/manifest/video.m3u8"
+        "src": "https://videodelivery.net/dc1c4dbeb7d9c6f3b6f23845f7beacf1/manifest/video.m3u8"
       }
     ],
     "prices": [
-      { "quantity": 2, "price": 40 },
-      { "quantity": 5, "price": 80 },
-      { "quantity": 10, "price": 140 },
-      { "quantity": 25, "price": 270 },
-      { "quantity": 50, "price": 500 },
-      { "quantity": 100, "price": 950 }
+      
+      { "quantity": 5, "price": 70 },
+      { "quantity": 10, "price": 130 },
+      { "quantity": 25, "price": 250 },
+      { "quantity": 50, "price": 400 },
+      { "quantity": 100, "price": 750 }
     ]
   },
 
   {
     "id": 2,
     "name": "PLASMA STATIC",
-    "category": "stock1",
+    "category": "stock",
     "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/5870881648805612750.jpg",
     "description": "...",
     "media": [
@@ -191,7 +187,7 @@
    {
     "id": 7,
     "name": "FROZEN SIFT",
-    "category": "stock1",
+    "category": "stock",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a28c8a01-9d59-49c0-3a79-378c48537900/public",
      "description": "...",
     "media": [ 
@@ -237,7 +233,7 @@
   {
     "id": 9,
     "name": "STATIC PAPAYABERRY",
-    "category": "stock1",
+    "category": "stock",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/c258a33e-ad7a-4374-3f4f-f06370386200/public",
     "description": "...",
     "media": [
@@ -289,7 +285,7 @@
   {
     "id": 9,
     "name": "SUPER STATIC",
-    "category": "stock1",
+    "category": "stock",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/db476707-5669-4f36-2474-235d12ec1400/public",
     "description": "...",
     "media": [
