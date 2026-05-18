@@ -217,30 +217,27 @@
   },
   {
     "id": 9,
-    "name": "STATIC PAPAYABERRY",
-    "category": "stock",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/c258a33e-ad7a-4374-3f4f-f06370386200/public",
+    "name": " CALI PLATES",
+    "category": "stock1",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/2c69b056-6547-42b3-4408-bdaa0ec69000/public",
     "description": "...",
     "media": [
       {
         "type": "image",
-        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/c258a33e-ad7a-4374-3f4f-f06370386200/public"
-      },
-      {
-        "type": "image",
-        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/53eaa716-1486-43fd-03f8-e9d987c54b00/public"
+        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/2c69b056-6547-42b3-4408-bdaa0ec69000/public"
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/b554111811a23b02b412c5d8b6ffbfef/manifest/video.m3u8"
-      },       
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/51df83bba1975618d37222e9d8129f5e/manifest/video.m3u8"
+        "src": "https://videodelivery.net/5aba7716180051badd4e42f3ca91273c/manifest/video.m3u8"
       }
     ],
     "prices": [
-      { "quantity": 100, "price": 800 }
+      { "quantity": 2, "price": 70 },
+      { "quantity": 5, "price": 150 },
+      { "quantity": 10, "price": 270 },
+      { "quantity": 25, "price": 500 },
+      { "quantity": 50, "price": 950 },
+      { "quantity": 100, "price": 1800 }
     ]
   },
   {
