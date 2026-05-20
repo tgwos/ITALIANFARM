@@ -94,7 +94,11 @@
     "media": [
       {
         "type": "video",
-        "src": "https://videodelivery.net/411c19b306094fcec2c0a50cb08eeb83/manifest/video.m3u8"
+        "src": "https://videodelivery.net/c0f9eb5ef2c874938f2a5506a1a84c4f/manifest/video.m3u8"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/0791d589c6fe6e7f30e8b0256f1cacc9/manifest/video.m3u8"
       }
     ],
     "prices": [
