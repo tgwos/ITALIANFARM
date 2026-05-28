@@ -57,22 +57,18 @@
 
   {
     "id": 3,
-    "name": "FROZEN PREMIUM",
-    "category": "stock",
-    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura.PNG",
+    "name": "THE HASH VALLEY",
+    "category": "stock1",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/715f2423-bb10-402b-4157-dd6981781700/public",
     "description": "...",
     "media": [
       {
-        "type": "image",
-        "src": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura.PNG"
+        "type": "video",
+        "src": "https://videodelivery.net/74172bff52bdd10bf05b4e7492b1f654/manifest/video.m3u8"
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/af7c56f5c639e604ac322070e7799f50/manifest/video.m3u8"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/20e151cf0361a2081b93e4510fdde51c/manifest/video.m3u8"
+        "src": "https://videodelivery.net/539104790f56eba4330bcea617df1ea3/manifest/video.m3u8"
       }
     ],
     "prices": [
