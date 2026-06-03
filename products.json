@@ -2,8 +2,8 @@
 [
   {
     "id": 1,
-    "name": "STATIC SIFT TROPICAL",
-    "category": "stock1",
+    "name": "",
+    "category": "stock",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/cc5096f6-f093-48f7-4029-f6e71e4d3300/public",
     "description": "...",
     "media": [
@@ -204,15 +204,16 @@
     "media": [
       {
         "type": "video",
-        "src": "https://videodelivery.net/8d3251022337641de72a7f476f3232a1/manifest/video.m3u8"
+        "src": "https://videodelivery.net/9db781045fc901256b485703494d853d/manifest/video.m3u8"
       }
     ],
     "prices": [
-      { "quantity": 2, "price": 80 },
-      { "quantity": 5, "price": 170 },
+      { "quantity": 2, "price": 70 },
+      { "quantity": 5, "price": 150 },
       { "quantity": 10, "price": 300 },
       { "quantity": 25, "price": 700 },
-      { "quantity": 50, "price": 1200 }
+      { "quantity": 50, "price": 1200 },
+      { "quantity": 100, "price": 2100 }
     ]
   },
   {
