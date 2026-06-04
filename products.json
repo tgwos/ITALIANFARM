@@ -2,29 +2,21 @@
 [
   {
     "id": 1,
-    "name": "",
-    "category": "stock",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/cc5096f6-f093-48f7-4029-f6e71e4d3300/public",
+    "name": "FILTRATO MG",
+    "category": "stock1",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/1306649a-accb-46d0-f51f-4941d148e100/public",
     "description": "...",
     "media": [
       {
-        "type": "image",
-        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/290f14e0-bec5-47c0-3818-da9af2f68b00/public"
-      },
-      {
         "type": "video",
-        "src": "https://videodelivery.net/399ef4b3f142e1ef151e06aa57f211d7/manifest/video.m3u8"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/a86c38aa89a365a725b4743ee198ce47/manifest/video.m3u8"
+        "src": "https://videodelivery.net/f03f5ec59df6db355536bf05d2b90210/manifest/video.m3u8"
       }
     ],
     "prices": [
-      
-      { "quantity": 5, "price": 70 },
-      { "quantity": 10, "price": 130 },
-      { "quantity": 25, "price": 250 },
+
+      { "quantity": 5, "price": 60 },
+      { "quantity": 10, "price": 100 },
+      { "quantity": 25, "price": 230 },
       { "quantity": 50, "price": 400 },
       { "quantity": 100, "price": 750 }
     ]
