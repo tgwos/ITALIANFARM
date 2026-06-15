@@ -76,7 +76,7 @@
   {
     "id": 4,
     "name": "QUALITÀ A+",
-    "category": "stock4",
+    "category": "stock",
     "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/wdw.PNG",
     "description": "...",
     "media": [
@@ -97,24 +97,26 @@
   },
   {
     "id": 5,
-    "name": "QUALITÀ A",
+    "name": "COCA SQUAMATA",
     "category": "stock4",
-    "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/dsc.PNG",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/f511abd3-a042-4eee-6739-dcb2232e8e00/public",
     "description": "...",
     "media": [
       {
         "type": "video",
-        "src": "https://videodelivery.net/41d8e7bcb56df10407216d1bb0b2ecce/manifest/video.m3u8"
+        "src": "https://videodelivery.net/d1a6df9bafbbc8d6209699325a728f58/manifest/video.m3u8"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/59cd0bd4ee8b544745e5d444f115411a/manifest/video.m3u8"
       }
     ],
-    "prices": [
-      { "quantity": 1, "price": 40 },
-      { "quantity": 2, "price": 80 },
-      { "quantity": 3, "price": 100 },
-      { "quantity": 5, "price": 150 },
-      { "quantity": 10, "price": 280 },
-      { "quantity": 50, "price": 1300 },
-      { "quantity": 100, "price": 2250 }
+    "prices": [ 
+      { "quantity": 5, "price": 200 },
+      { "quantity": 10, "price": 350 },
+      { "quantity": 50, "price": 1350 },
+      { "quantity": 100, "price": 2500 },
+      { "quantity": 500, "price": 11250 }
     ]
   },
   {
