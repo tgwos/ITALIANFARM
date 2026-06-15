@@ -3,7 +3,7 @@
   {
     "id": 1,
     "name": "FILTRATO MG",
-    "category": "stock1",
+    "category": "stock",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/1306649a-accb-46d0-f51f-4941d148e100/public",
     "description": "...",
     "media": [
@@ -36,6 +36,10 @@
       {
         "type": "video",
         "src": "https://videodelivery.net/fd5c768a4dbba15267d307ec41beed39/manifest/video.m3u8"
+      },
+      {
+        "type": "video",
+        "src": "https://videodelivery.net/eda545ebd2d4caca2d4923aba448d11b/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -164,19 +168,12 @@
   },
    {
     "id": 7,
-    "name": "FROZEN SIFT",
+    "name": "STATIC TROPICACLI",
     "category": "stock1",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a28c8a01-9d59-49c0-3a79-378c48537900/public",
      "description": "...",
     "media": [ 
-      {
-        "type": "image",
-        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a28c8a01-9d59-49c0-3a79-378c48537900/public"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/cad53a9f4b20f6a92afda49d2377bb36/manifest/video.m3u8"
-      },
+      
       {
         "type": "video",
         "src": " https://videodelivery.net/195a8ee6612cf3a66f4f18a7ba0a4b2c/manifest/video.m3u8"
