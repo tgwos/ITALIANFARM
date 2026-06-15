@@ -2,28 +2,6 @@
 [
   {
     "id": 1,
-    "name": "FILTRATO MG",
-    "category": "stock",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/1306649a-accb-46d0-f51f-4941d148e100/public",
-    "description": "...",
-    "media": [
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/f03f5ec59df6db355536bf05d2b90210/manifest/video.m3u8"
-      }
-    ],
-    "prices": [
-
-      { "quantity": 5, "price": 60 },
-      { "quantity": 10, "price": 100 },
-      { "quantity": 25, "price": 230 },
-      { "quantity": 50, "price": 400 },
-      { "quantity": 100, "price": 750 }
-    ]
-  },
-
-  {
-    "id": 2,
     "name": "Static mountain terps",
     "category": "stock1",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/04c61669-e56d-4cc9-a710-19dcb01f2e00/public",
@@ -36,27 +14,6 @@
       {
         "type": "video",
         "src": "https://videodelivery.net/fd5c768a4dbba15267d307ec41beed39/manifest/video.m3u8"
-      },
-    ],
-    "prices": [
-      { "quantity": 5, "price": 60 },
-      { "quantity": 10, "price": 100 },
-      { "quantity": 25, "price": 230 },
-      { "quantity": 50, "price": 400 },
-      { "quantity": 100, "price": 750 }
-    ]
-  },
-
-  {
-    "id": 3,
-    "name": "Banana skidolz",
-    "category": "stock",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a5e77ec7-02fc-48ac-06c9-8535e62fa300/public",
-    "description": "...",
-    "media": [
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/fd5c768a4dbba15267d307ec41beed39/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -67,9 +24,8 @@
       { "quantity": 100, "price": 750 }
     ]
   },
-
   {
-    "id": 4,
+    "id": 2,
     "name": "DRY VARIE FARM",
     "category": "stock2",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/3a88b3fc-df4e-4057-d35b-255fc053bd00/public",
@@ -95,14 +51,13 @@
       { "quantity": 1000, "price": 2700 }
     ]
   },
-   {
-    "id": 5,
+  {
+    "id": 3,
     "name": "TUSSI B",
     "category": "stock5",
     "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/Cattura3.PNG",
-     "description": "...",
+    "description": "...",
     "media": [
-      
       {
         "type": "video",
         "src": "https://videodelivery.net/9c47b1a93b332ecc7d83ab288e30770c/manifest/video.m3u8"
@@ -118,12 +73,12 @@
       { "quantity": 50, "price": 1000 }
     ]
   },
-   {
-    "id": 6,
-    "name": " QUALITÀ A+",
+  {
+    "id": 4,
+    "name": "QUALITÀ A+",
     "category": "stock4",
     "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/wdw.PNG",
-     "description": "...",
+    "description": "...",
     "media": [
       {
         "type": "video",
@@ -141,11 +96,11 @@
     ]
   },
   {
-    "id": 7,
-    "name": " QUALITÀ A",
+    "id": 5,
+    "name": "QUALITÀ A",
     "category": "stock4",
     "previewImage": "https://ik.imagekit.io/lao1bkp97/italian%20farm/dsc.PNG",
-     "description": "...",
+    "description": "...",
     "media": [
       {
         "type": "video",
@@ -162,17 +117,16 @@
       { "quantity": 100, "price": 2250 }
     ]
   },
-   {
-    "id": 7,
-    "name": "STATIC TROPICACLI",
+  {
+    "id": 6,
+    "name": "STATIC TROPICALI",
     "category": "stock1",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a28c8a01-9d59-49c0-3a79-378c48537900/public",
-     "description": "...",
-    "media": [ 
-      
+    "description": "...",
+    "media": [
       {
         "type": "video",
-        "src": " https://videodelivery.net/195a8ee6612cf3a66f4f18a7ba0a4b2c/manifest/video.m3u8"
+        "src": "https://videodelivery.net/195a8ee6612cf3a66f4f18a7ba0a4b2c/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -184,7 +138,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 7,
     "name": "WPFF",
     "category": "stock6",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/38d023d9-cf6f-4e6d-2544-5c1ff2e48400/public",
@@ -205,28 +159,7 @@
     ]
   },
   {
-    "id": 9,
-    "name": "Tropicali",
-    "category": "stock",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/9db5cbd6-854f-49a7-4266-d28aff538c00/public",
-    "description": "...",
-    "media": [
-      
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/195a8ee6612cf3a66f4f18a7ba0a4b2c/manifest/video.m3u8"
-      }
-    ],
-    "prices": [
-      { "quantity": 5, "price": 60 },
-      { "quantity": 10, "price": 100 },
-      { "quantity": 25, "price": 230 },
-      { "quantity": 50, "price": 400 },
-      { "quantity": 100, "price": 750 }
-    ]
-  },
-  {
-    "id": 9,
+    "id": 8,
     "name": "WEED",
     "category": "stock3",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/2569a440-62e7-4be0-7269-5169f9099300/public",
@@ -256,12 +189,10 @@
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/9c46f294-2d7a-4879-5890-33035374b200/public",
     "description": "...",
     "media": [
-      
       {
         "type": "video",
         "src": "https://videodelivery.net/eda545ebd2d4caca2d4923aba448d11b/manifest/video.m3u8"
       }
-      
     ],
     "prices": [
       { "quantity": 2, "price": 50 },
