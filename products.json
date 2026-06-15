@@ -37,10 +37,6 @@
         "type": "video",
         "src": "https://videodelivery.net/fd5c768a4dbba15267d307ec41beed39/manifest/video.m3u8"
       },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/eda545ebd2d4caca2d4923aba448d11b/manifest/video.m3u8"
-      }
     ],
     "prices": [
       { "quantity": 5, "price": 60 },
@@ -257,7 +253,7 @@
     "id": 9,
     "name": "FRESH FROZEN",
     "category": "stock1",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/9c46f294-2d7a-4879-5890-33035374b200/publicc",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/9c46f294-2d7a-4879-5890-33035374b200/public",
     "description": "...",
     "media": [
       
