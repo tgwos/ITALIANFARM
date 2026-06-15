@@ -24,52 +24,47 @@
 
   {
     "id": 2,
-    "name": "STATIC PREMIUM",
+    "name": "Static mountain terps",
     "category": "stock1",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/66aa3cc6-8218-4557-82d5-415f7a3ee200/public",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/04c61669-e56d-4cc9-a710-19dcb01f2e00/public",
     "description": "...",
     "media": [
       {
-        "type": "image",
-        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/66aa3cc6-8218-4557-82d5-415f7a3ee200/public"
+        "type": "video",
+        "src": "https://videodelivery.net/8f42b2c1b6553e86f129ccbbccc52610/manifest/video.m3u8"
       },
       {
         "type": "video",
-        "src": "https://videodelivery.net/5fb3d6dec7dad838f748ed67a0ca6381/manifest/video.m3u8"
+        "src": "https://videodelivery.net/fd5c768a4dbba15267d307ec41beed39/manifest/video.m3u8"
       }
     ],
     "prices": [
-      { "quantity": 5, "price": 80 },
-      { "quantity": 10, "price": 150 },
-      { "quantity": 25, "price": 270 },
-      { "quantity": 50, "price": 450 },
-      { "quantity": 100, "price": 850 }
+      { "quantity": 5, "price": 60 },
+      { "quantity": 10, "price": 100 },
+      { "quantity": 25, "price": 230 },
+      { "quantity": 50, "price": 400 },
+      { "quantity": 100, "price": 750 }
     ]
   },
 
   {
     "id": 3,
-    "name": "THE HASH VALLEY",
-    "category": "stock1",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/715f2423-bb10-402b-4157-dd6981781700/public",
+    "name": "Banana skidolz",
+    "category": "stock",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a5e77ec7-02fc-48ac-06c9-8535e62fa300/public",
     "description": "...",
     "media": [
       {
         "type": "video",
-        "src": "https://videodelivery.net/74172bff52bdd10bf05b4e7492b1f654/manifest/video.m3u8"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/539104790f56eba4330bcea617df1ea3/manifest/video.m3u8"
+        "src": "https://videodelivery.net/fd5c768a4dbba15267d307ec41beed39/manifest/video.m3u8"
       }
     ],
     "prices": [
-      { "quantity": 2, "price": 50 },
-      { "quantity": 5, "price": 90 },
-      { "quantity": 10, "price": 190 },
-      { "quantity": 25, "price": 400 },
-      { "quantity": 50, "price": 750 },
-      { "quantity": 100, "price": 1350 }
+      { "quantity": 5, "price": 60 },
+      { "quantity": 10, "price": 100 },
+      { "quantity": 25, "price": 230 },
+      { "quantity": 50, "price": 400 },
+      { "quantity": 100, "price": 750 }
     ]
   },
 
@@ -170,7 +165,7 @@
    {
     "id": 7,
     "name": "FROZEN SIFT",
-    "category": "stock",
+    "category": "stock1",
     "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a28c8a01-9d59-49c0-3a79-378c48537900/public",
      "description": "...",
     "media": [ 
@@ -181,10 +176,18 @@
       {
         "type": "video",
         "src": "https://videodelivery.net/cad53a9f4b20f6a92afda49d2377bb36/manifest/video.m3u8"
+      },
+      {
+        "type": "video",
+        "src": " https://videodelivery.net/195a8ee6612cf3a66f4f18a7ba0a4b2c/manifest/video.m3u8"
       }
     ],
     "prices": [
-      { "quantity": 100, "price": 700 }
+      { "quantity": 5, "price": 60 },
+      { "quantity": 10, "price": 100 },
+      { "quantity": 25, "price": 230 },
+      { "quantity": 50, "price": 400 },
+      { "quantity": 100, "price": 750 }
     ]
   },
   {
@@ -210,27 +213,23 @@
   },
   {
     "id": 9,
-    "name": " CALI PLATES",
-    "category": "stock1",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/2c69b056-6547-42b3-4408-bdaa0ec69000/public",
+    "name": "Tropicali",
+    "category": "stock",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/9db5cbd6-854f-49a7-4266-d28aff538c00/public",
     "description": "...",
     "media": [
-      {
-        "type": "image",
-        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/2c69b056-6547-42b3-4408-bdaa0ec69000/public"
-      },
+      
       {
         "type": "video",
-        "src": "https://videodelivery.net/5aba7716180051badd4e42f3ca91273c/manifest/video.m3u8"
+        "src": "https://videodelivery.net/195a8ee6612cf3a66f4f18a7ba0a4b2c/manifest/video.m3u8"
       }
     ],
     "prices": [
-      { "quantity": 2, "price": 70 },
-      { "quantity": 5, "price": 150 },
-      { "quantity": 10, "price": 270 },
-      { "quantity": 25, "price": 500 },
-      { "quantity": 50, "price": 950 },
-      { "quantity": 100, "price": 1800 }
+      { "quantity": 5, "price": 60 },
+      { "quantity": 10, "price": 100 },
+      { "quantity": 25, "price": 230 },
+      { "quantity": 50, "price": 400 },
+      { "quantity": 100, "price": 750 }
     ]
   },
   {
@@ -259,26 +258,25 @@
   },
   {
     "id": 9,
-    "name": "SUPER STATIC",
-    "category": "stock",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/db476707-5669-4f36-2474-235d12ec1400/public",
+    "name": "FRESH FROZEN",
+    "category": "stock1",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/9c46f294-2d7a-4879-5890-33035374b200/publicc",
     "description": "...",
     "media": [
-      {
-        "type": "image",
-        "src": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/db476707-5669-4f36-2474-235d12ec1400/public"
-      },
+      
       {
         "type": "video",
-        "src": "https://videodelivery.net/65c0580f591bd1d89b05c432dbf044e7/manifest/video.m3u8"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/79e622ee55129fa84150497af7560dad/manifest/video.m3u8"
+        "src": "https://videodelivery.net/eda545ebd2d4caca2d4923aba448d11b/manifest/video.m3u8"
       }
+      
     ],
     "prices": [
-      { "quantity": 100, "price": 850 }
+      { "quantity": 2, "price": 50 },
+      { "quantity": 5, "price": 100 },
+      { "quantity": 10, "price": 180 },
+      { "quantity": 25, "price": 400 },
+      { "quantity": 50, "price": 700 },
+      { "quantity": 100, "price": 1350 }
     ]
   }
 ]
