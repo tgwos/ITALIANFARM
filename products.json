@@ -28,16 +28,12 @@
     "id": 2,
     "name": "DRY VARIE FARM",
     "category": "stock2",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/3a88b3fc-df4e-4057-d35b-255fc053bd00/public",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/56ae7bb2-fb5c-4175-919f-0f3e5deade00/public",
     "description": "...",
     "media": [
       {
         "type": "video",
-        "src": "https://videodelivery.net/c0f9eb5ef2c874938f2a5506a1a84c4f/manifest/video.m3u8"
-      },
-      {
-        "type": "video",
-        "src": "https://videodelivery.net/0791d589c6fe6e7f30e8b0256f1cacc9/manifest/video.m3u8"
+        "src": "https://videodelivery.net/9296f31d2c7bfbd2df1fab22fb9f6b76/manifest/video.m3u8"
       }
     ],
     "prices": [
@@ -123,7 +119,7 @@
     "id": 6,
     "name": "STATIC TROPICALI",
     "category": "stock1",
-    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/a28c8a01-9d59-49c0-3a79-378c48537900/public",
+    "previewImage": "https://imagedelivery.net/NDmb7wdAt1NpzNsXB7Yxlw/2c94daa6-8a79-483f-11ad-fcb8a62d7400/public",
     "description": "...",
     "media": [
       {
