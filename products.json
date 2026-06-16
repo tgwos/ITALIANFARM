@@ -128,9 +128,9 @@
       }
     ],
     "prices": [
-      { "quantity": 5, "price": 60 },
-      { "quantity": 10, "price": 100 },
-      { "quantity": 25, "price": 230 },
+      { "quantity": 5, "price": 70 },
+      { "quantity": 10, "price": 120 },
+      { "quantity": 25, "price": 250 },
       { "quantity": 50, "price": 400 },
       { "quantity": 100, "price": 750 }
     ]
